@@ -593,33 +593,62 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Página de cadastro carregada');
 
-            // Atualizar progresso do formulário
-            const campos = document.querySelectorAll('#form-cadastro input, #form-cadastro select, #form-cadastro textarea');
+            // Atualizar progresso do formulário - APENAS CAMPOS OBRIGATÓRIOS
+            const camposObrigatorios = document.querySelectorAll('#form-cadastro input[required], #form-cadastro select[required], #form-cadastro textarea[required]');
             const progressBar = document.getElementById('progresso-cadastro');
+            
+            // Debug: mostrar quantos campos obrigatórios foram encontrados
+            console.log('Campos obrigatórios encontrados:', camposObrigatorios.length);
+            camposObrigatorios.forEach((campo, index) => {
+                console.log(`${index + 1}. ${campo.name || campo.id} (${campo.type || campo.tagName})`);
+            });
 
             function atualizarProgresso() {
-                const camposPreenchidos = Array.from(campos).filter(campo => {
-                    if (campo.type === 'checkbox' || campo.type === 'radio') {
-                        return campo.checked;
+                const camposPreenchidos = Array.from(camposObrigatorios).filter(campo => {
+                    let preenchido = false;
+                    
+                    // Para checkboxes obrigatórios
+                    if (campo.type === 'checkbox') {
+                        preenchido = campo.checked;
                     }
-                    return campo.value.trim() !== '';
-                }).length;
+                    // Para selects obrigatórios  
+                    else if (campo.tagName === 'SELECT') {
+                        preenchido = campo.value.trim() !== '';
+                    }
+                    // Para textareas obrigatórios
+                    else if (campo.tagName === 'TEXTAREA') {
+                        preenchido = campo.value.trim() !== '';
+                    }
+                    // Para inputs de texto obrigatórios
+                    else {
+                        preenchido = campo.value.trim() !== '';
+                    }
+                    
+                    return preenchido;
+                });
 
-                const porcentagem = Math.round((camposPreenchidos / campos.length) * 100);
+                const porcentagem = Math.round((camposPreenchidos.length / camposObrigatorios.length) * 100);
                 progressBar.style.width = porcentagem + '%';
-                progressBar.textContent = porcentagem + '% Completo';
+                progressBar.textContent = `${porcentagem}% Completo (${camposPreenchidos.length}/${camposObrigatorios.length})`;
                 progressBar.setAttribute('aria-valuenow', porcentagem);
 
+                // Atualizar cor da barra com base no progresso
                 if (porcentagem < 50) {
                     progressBar.className = 'progress-bar bg-danger';
                 } else if (porcentagem < 80) {
                     progressBar.className = 'progress-bar bg-warning';
-                } else {
+                } else if (porcentagem === 100) {
                     progressBar.className = 'progress-bar bg-success';
+                } else {
+                    progressBar.className = 'progress-bar bg-primary';
                 }
+                
+                // Debug opcional
+                console.log(`Progresso: ${camposPreenchidos.length}/${camposObrigatorios.length} (${porcentagem}%)`);
             }
 
-            campos.forEach(campo => {
+            // Adicionar eventos apenas aos campos obrigatórios
+            camposObrigatorios.forEach(campo => {
                 campo.addEventListener('input', atualizarProgresso);
                 campo.addEventListener('change', atualizarProgresso);
             });
