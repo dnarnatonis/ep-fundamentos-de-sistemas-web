@@ -59,10 +59,10 @@ class CalendarioAgendamento {
                     <div class="dias-mes" id="dias-mes"></div>
                 </div>
                 
-                <div class="horarios-container" id="horarios-container" style="display: none;">
+                <div class="horarios-container hidden" id="horarios-container">
                     <h4>Horários Disponíveis</h4>
                     <div class="horarios-grid" id="horarios-grid"></div>
-                    <div class="resumo-agendamento" id="resumo-agendamento" style="display: none;">
+                    <div class="resumo-agendamento hidden" id="resumo-agendamento">
                         <h5>Resumo do Agendamento</h5>
                         <p><strong>Data:</strong> <span id="data-resumo"></span></p>
                         <p><strong>Horário:</strong> <span id="horario-resumo"></span></p>
@@ -225,7 +225,7 @@ class CalendarioAgendamento {
         `).join('');
         
         grid.innerHTML = botoesHorarios;
-        container.style.display = 'block';
+        container.classList.remove('hidden');
         
         // Scroll suave para os horários
         container.scrollIntoView({ behavior: 'smooth' });
@@ -272,7 +272,7 @@ class CalendarioAgendamento {
         dataResumo.textContent = dataFormatada;
         horarioResumo.textContent = this.horarioSelecionado;
         
-        resumo.style.display = 'block';
+        resumo.classList.remove('hidden');
         resumo.scrollIntoView({ behavior: 'smooth' });
     }
     
@@ -319,8 +319,8 @@ class CalendarioAgendamento {
         this.horarioSelecionado = null;
         
         // Esconder containers
-        document.getElementById('horarios-container').style.display = 'none';
-        document.getElementById('resumo-agendamento').style.display = 'none';
+        document.getElementById('horarios-container').classList.add('hidden');
+        document.getElementById('resumo-agendamento').classList.add('hidden');
         
         // Remover seleções visuais
         document.querySelectorAll('.dia-selecionado, .btn-horario.selecionado').forEach(el => {
@@ -409,250 +409,13 @@ function cancelarAgendamento() {
     }
 }
 
-// CSS para o calendário
-function adicionarEstilosCalendario() {
-    if (document.getElementById('calendar-styles')) return;
-    
-    const styles = document.createElement('style');
-    styles.id = 'calendar-styles';
-    styles.textContent = `
-        .calendario-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .calendario-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background: linear-gradient(135deg, #2c5530, #4a7c59);
-            color: white;
-        }
-        
-        .btn-nav {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-nav:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        .mes-ano {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .calendario-grid {
-            padding: 20px;
-        }
-        
-        .dias-semana {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            margin-bottom: 15px;
-        }
-        
-        .dia-semana {
-            text-align: center;
-            font-weight: 600;
-            color: #666;
-            padding: 10px 0;
-            font-size: 0.9rem;
-        }
-        
-        .dias-mes {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-        }
-        
-        .dia {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-        }
-        
-        .dia-vazio {
-            aspect-ratio: 1;
-        }
-        
-        .dia-disponivel {
-            background: #f8f9fa;
-            color: #333;
-            border: 2px solid transparent;
-        }
-        
-        .dia-disponivel:hover {
-            background: #e9ecef;
-        }
-        
-        .dia-disponivel:focus {
-            outline: none;
-            border-color: #2c5530;
-            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.2);
-        }
-        
-        .dia-hoje {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .dia-selecionado {
-            background: #4a7c59 !important;
-            color: white !important;
-        }
-        
-        .dia-passado {
-            color: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .dia-bloqueado {
-            color: #999;
-            background: #f5f5f5;
-            cursor: not-allowed;
-        }
-        
-        .horarios-container {
-            padding: 20px;
-            border-top: 1px solid #eee;
-            background: #f8f9fa;
-        }
-        
-        .horarios-container h4 {
-            margin: 0 0 15px 0;
-            color: #2c5530;
-            text-align: center;
-        }
-        
-        .horarios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .btn-horario {
-            padding: 10px;
-            border: 2px solid #2c5530;
-            background: white;
-            color: #2c5530;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            font-weight: 500;
-        }
-        
-        .btn-horario:hover {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .btn-horario.selecionado {
-            background: #4a7c59;
-            color: white;
-            border-color: #4a7c59;
-        }
-        
-        .resumo-agendamento {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        .resumo-agendamento h5 {
-            color: #2c5530;
-            margin-bottom: 15px;
-        }
-        
-        .resumo-agendamento p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin: 0 5px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #4a7c59;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
-        
-        @media (max-width: 480px) {
-            .calendario-container {
-                margin: 10px;
-            }
-            
-            .horarios-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .resumo-agendamento {
-                padding: 15px;
-            }
-            
-            .btn {
-                display: block;
-                width: 100%;
-                margin: 5px 0;
-            }
-        }
-    `;
-    
-    document.head.appendChild(styles);
-}
+// Estilos agora estão todos no arquivo CSS style.css
+
+// Não é mais necessário forçar estilos via JavaScript
+// Todas as cores e estilos estão definidos no CSS
 
 // Inicializar calendário quando DOM carregar
 document.addEventListener('DOMContentLoaded', function() {
-    adicionarEstilosCalendario();
-    
     // Criar calendário se elemento existir
     const calendarioElement = document.getElementById('calendario-agendamento');
     if (calendarioElement) {
