@@ -23,123 +23,218 @@
 
     <header>
         <div class="container">
-            <h1>Minimercado Bom Preço</h1>
-            <p>Qualidade e Economia para sua Família</p>
+        <h1>Minimercado Bom Preço</h1>
+        <p>Qualidade e Economia para sua Família</p>
 
             <nav id="navigation" role="navigation" aria-label="Navegação principal">
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
                     <li><a href="cadastro.html">Cadastro</a></li>
                     <li><a href="agendamento.html">Agendamento</a></li>
-                </ul>
-            </nav>
+            </ul>
+        </nav>
 
             <!-- Contador de visitas -->
             <div id="contador-visitas" class="text-center mt-3" role="status" aria-live="polite"></div>
         </div>
     </header>
 
-    <main id="main-content">
-        <section>
-            <nav>
-                <p><a href="produtos.html">← Voltar aos Produtos</a> | <a href="produtos.html#frutas-verduras">Frutas e Verduras</a></p>
+    <main id="main-content" class="container my-4">
+        <!-- Breadcrumb Navigation -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="produtos.html">← Produtos</a></li>
+                        <li class="breadcrumb-item"><a href="produtos.html#frutas-verduras">Frutas e Verduras</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Maçã Gala</li>
+                    </ol>
             </nav>
-        </section>
+            </div>
+        </div>
 
-        <article>
-            <header>
-                <h2>Maçã Gala</h2>
-                <p><em>Categoria: Frutas e Verduras</em></p>
-            </header>
+        <div class="row g-4">
+            <!-- Galeria de Imagens -->
+            <div class="col-12 col-lg-6">
+                <article class="card shadow">
+                    <div class="card-header bg-success text-white text-center">
+                        <h2 class="card-title h4 mb-0">🍎 Maçã Gala</h2>
+                        <p class="mb-0"><small><em>Categoria: Frutas e Verduras</em></small></p>
+                    </div>
+                    
+                    <div class="card-body p-0">
+                        <!-- Galeria principal -->
+                        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Vista principal"></button>
+                                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Produto cortado"></button>
+                            </div>
+                            
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Maçã+Gala" 
+                                         class="d-block w-100" 
+                                         alt="Maçã Gala vermelha e amarela, fresca e suculenta"
+                                         style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Maçã Gala</h5>
+                                        <p>Vista principal do produto</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://placehold.co/600x400/c0392b/ffffff?text=Maçã+Cortada" 
+                                         class="d-block w-100" 
+                                         alt="Maçã Gala cortada mostrando polpa branca e suculenta"
+                                         style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Maçã Gala</h5>
+                                        <p>Polpa branca e suculenta</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
 
-            <section>
-                <h3>Imagens do Produto</h3>
-
-                <figure>
-                    <img src="https://placehold.co/400x300/e74c3c/ffffff?text=Maçã+Gala" alt="Maçã Gala vermelha e amarela, fresca e suculenta" width="400" height="300">
-                    <figcaption>Maçã Gala - Vista principal do produto</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="https://placehold.co/400x300/c0392b/ffffff?text=Maçã+Cortada" alt="Maçã Gala cortada mostrando polpa branca e suculenta" width="400" height="300">
-                    <figcaption>Maçã Gala - Polpa branca e suculenta</figcaption>
-                </figure>
-            </section>
-
-            <section>
-                <h3>Informações Básicas</h3>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
+            <!-- Informações do Produto -->
+            <div class="col-12 col-lg-6">
+                <section class="card shadow h-100">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3 class="card-title h4 mb-0">📋 Informações do Produto</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
                     <tbody>
                         <tr>
-                            <td><strong>Nome do Produto</strong></td>
+                                        <td><strong>📦 Nome do Produto</strong></td>
                             <td>Maçã Gala</td>
                         </tr>
                         <tr>
-                            <td><strong>Categoria</strong></td>
+                                        <td><strong>🏷️ Categoria</strong></td>
                             <td>Frutas e Verduras</td>
                         </tr>
                         <tr>
-                            <td><strong>Origem</strong></td>
+                                        <td><strong>📍 Origem</strong></td>
                             <td>Rio Grande do Sul - Brasil</td>
                         </tr>
                         <tr>
-                            <td><strong>Variedade</strong></td>
+                                        <td><strong>🧬 Variedade</strong></td>
                             <td>Gala (Malus domestica)</td>
                         </tr>
                         <tr>
-                            <td><strong>Preço</strong></td>
-                            <td><strong>R$ 4,99/kg</strong></td>
+                                        <td><strong>💰 Preço</strong></td>
+                                        <td class="text-success fs-5"><strong>R$ 4,99/kg</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>Disponibilidade</strong></td>
-                            <td>Em estoque</td>
+                                        <td><strong>📊 Disponibilidade</strong></td>
+                                        <td><span class="badge bg-success">Em estoque</span></td>
                         </tr>
                     </tbody>
                 </table>
+                        </div>
+                        
+                        <!-- Botões de Ação -->
+                        <div class="text-center mt-4">
+                            <a href="agendamento.html" class="btn btn-success btn-lg me-2 mb-2">🛒 Pedir Agora</a>
+                            <a href="contato.html" class="btn btn-outline-primary btn-lg mb-2">📞 Mais Informações</a>
+                        </div>
+                    </div>
             </section>
+            </div>
+        </div>
 
-            <section>
-                <h3>Descrição Detalhada</h3>
+        <!-- Seção de Descrição Detalhada -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <section class="card shadow">
+                    <div class="card-header bg-info text-white text-center">
+                        <h3 class="card-title h4 mb-0">📝 Descrição Detalhada</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p>A Maçã Gala é uma das variedades mais apreciadas no Brasil, conhecida por seu sabor doce e levemente ácido, polpa crocante e suculenta. Nossa seleção de maçãs Gala vem diretamente dos pomares do Rio Grande do Sul, garantindo frescor e qualidade superior.</p>
 
-                <p>
-                    A Maçã Gala é uma das variedades mais apreciadas no Brasil, conhecida por seu
-                    sabor doce e levemente ácido, polpa crocante e suculenta. Nossa seleção de
-                    maçãs Gala vem diretamente dos pomares do Rio Grande do Sul, garantindo
-                    frescor e qualidade superior.
-                </p>
+                        <p>Esta fruta versátil é perfeita para consumo in natura, preparo de sobremesas, sucos naturais e saladas de frutas. Sua casca vermelha com tons amarelados e formato arredondado a tornam visualmente atrativa e apetitosa.</p>
 
-                <p>
-                    Esta fruta versátil é perfeita para consumo in natura, preparo de sobremesas,
-                    sucos naturais e saladas de frutas. Sua casca vermelha com tons amarelados
-                    e formato arredondado a tornam visualmente atrativa e apetitosa.
-                </p>
-
-                <h4>Características Sensoriais</h4>
-                <ul>
-                    <li><strong>Sabor:</strong> Doce com leve acidez</li>
-                    <li><strong>Textura:</strong> Crocante e suculenta</li>
-                    <li><strong>Aroma:</strong> Fragrância frutada característica</li>
-                    <li><strong>Aparência:</strong> Casca vermelha com tons amarelados</li>
-                    <li><strong>Tamanho:</strong> Médio a grande (aproximadamente 150-200g por unidade)</li>
-                </ul>
+                        <div class="mt-4">
+                            <h4 class="h5 text-info">🌟 Características Sensoriais</h4>
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body text-center p-3">
+                                            <div class="h6 mb-1">👅 Sabor</div>
+                                            <small>Doce com leve acidez</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body text-center p-3">
+                                            <div class="h6 mb-1">🔘 Textura</div>
+                                            <small>Crocante e suculenta</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body text-center p-3">
+                                            <div class="h6 mb-1">👃 Aroma</div>
+                                            <small>Fragrância frutada</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body text-center p-3">
+                                            <div class="h6 mb-1">👁️ Aparência</div>
+                                            <small>Casca vermelha com tons amarelados</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="card border-0 bg-light">
+                                        <div class="card-body text-center p-3">
+                                            <div class="h6 mb-1">📏 Tamanho</div>
+                                            <small>Médio a grande (150-200g)</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </section>
+            </div>
+        </div>
 
-            <section>
-                <h3>Informações Nutricionais</h3>
-                <p><em>Valores por 100g de produto:</em></p>
-
-                <table>
-                    <thead>
+        <!-- Informações Nutricionais e Benefícios -->
+        <div class="row mt-4 g-4">
+            <div class="col-12 col-lg-6">
+                <section class="card shadow h-100">
+                    <div class="card-header bg-success text-white text-center">
+                        <h3 class="card-title h4 mb-0">🥗 Informações Nutricionais</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="text-muted small mb-3"><em>Valores por 100g de produto:</em></p>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered">
+                                <thead class="table-light">
                         <tr>
                             <th>Nutriente</th>
                             <th>Quantidade</th>
@@ -148,40 +243,63 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Calorias</td>
-                            <td>52 kcal</td>
+                                        <td>🔥 Calorias</td>
+                                        <td><strong>52 kcal</strong></td>
                             <td>3%</td>
                         </tr>
                         <tr>
-                            <td>Carboidratos</td>
+                                        <td>🍞 Carboidratos</td>
                             <td>14g</td>
                             <td>5%</td>
                         </tr>
                         <tr>
-                            <td>Fibras</td>
+                                        <td>🌾 Fibras</td>
                             <td>2,4g</td>
                             <td>10%</td>
                         </tr>
                         <tr>
-                            <td>Vitamina C</td>
+                                        <td>🍊 Vitamina C</td>
                             <td>4,6mg</td>
                             <td>10%</td>
                         </tr>
                         <tr>
-                            <td>Potássio</td>
+                                        <td>⚡ Potássio</td>
                             <td>107mg</td>
                             <td>5%</td>
                         </tr>
                         <tr>
-                            <td>Açúcares</td>
+                                        <td>🍯 Açúcares</td>
                             <td>10g</td>
                             <td>-</td>
                         </tr>
                     </tbody>
                 </table>
+                        </div>
 
-                <p><small>* % Valores Diários com base em uma dieta de 2000 kcal ou 8400 kJ.</small></p>
+                        <small class="text-muted">* % Valores Diários com base em uma dieta de 2000 kcal</small>
+                    </div>
             </section>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <section class="card shadow h-100">
+                    <div class="card-header bg-warning text-dark text-center">
+                        <h3 class="card-title h4 mb-0">💪 Benefícios para a Saúde</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-0"><strong>🌾 Rica em fibras:</strong> Auxilia no funcionamento intestinal</li>
+                            <li class="list-group-item border-0"><strong>🛡️ Antioxidantes:</strong> Contribui para a prevenção do envelhecimento precoce</li>
+                            <li class="list-group-item border-0"><strong>🍊 Vitamina C:</strong> Fortalece o sistema imunológico</li>
+                            <li class="list-group-item border-0"><strong>📊 Baixo índice glicêmico:</strong> Adequada para diabéticos</li>
+                            <li class="list-group-item border-0"><strong>❤️ Potássio:</strong> Importante para a função cardiovascular</li>
+                            <li class="list-group-item border-0"><strong>🧹 Pectina:</strong> Ajuda a controlar os níveis de colesterol</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
 
             <section>
                 <h3>Benefícios para a Saúde</h3>
@@ -257,39 +375,58 @@
                 <p><strong>Sustentabilidade:</strong> Priorizamos fornecedores que utilizam
                 práticas sustentáveis de cultivo, respeitando o meio ambiente.</p>
             </section>
-        </article>
+        <!-- Outros Produtos da Categoria -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <section class="card shadow">
+                    <div class="card-header bg-secondary text-white text-center">
+                        <h3 class="card-title h4 mb-0">🔗 Produtos Relacionados</h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="text-center mb-4">Outros produtos da categoria <strong>Frutas e Verduras</strong>:</p>
+                        
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <a href="detalhe-produto.html?produto=alface-americana" class="btn btn-outline-success w-100">🥬 Alface Americana</a>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <a href="produtos.html#frutas-verduras" class="btn btn-primary w-100">📦 Ver todos os produtos</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
 
-        <section>
-            <h2>Produtos Relacionados</h2>
-            <p>Outros produtos da categoria Frutas e Verduras:</p>
-
-            <nav>
-                <ul>
-                    <li><a href="detalhe-produto.html?produto=alface-americana">Alface Americana</a></li>
-                    <li><a href="produtos.html#frutas-verduras">Ver todos os produtos da categoria</a></li>
-                </ul>
-            </nav>
-        </section>
+        <!-- Botões de Ação Final -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <a href="agendamento.html" class="btn btn-success btn-lg me-2 mb-2">🛒 Fazer Pedido</a>
+                <a href="contato.html" class="btn btn-outline-primary btn-lg me-2 mb-2">📞 Dúvidas</a>
+                <a href="produtos.html" class="btn btn-outline-secondary btn-lg mb-2">← Voltar aos Produtos</a>
+            </div>
+        </div>
     </main>
 
     <footer id="footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <section>
-                        <h2>Contato</h2>
-                        <p>
+        <section>
+            <h2>Contato</h2>
+            <p>
                             <strong>📞 Telefone:</strong> (51) 3333-4444<br>
                             <strong>📱 WhatsApp:</strong> (51) 99999-8888<br>
                             <strong>📧 E-mail:</strong> contato@minimercadobompreco.com.br
-                        </p>
-                    </section>
+            </p>
+        </section>
                 </div>
 
                 <div class="col-md-4">
-                    <section>
-                        <h2>Navegação</h2>
-                        <nav>
+        <section>
+            <h2>Navegação</h2>
+            <nav>
                             <ul class="list-unstyled">
                                 <li><a href="../index.html">🏠 Início</a></li>
                                 <li><a href="produtos.html">📦 Produtos</a></li>
@@ -297,27 +434,27 @@
                                 <li><a href="contato.html">📞 Contato</a></li>
                                 <li><a href="cadastro.html">📝 Cadastro</a></li>
                                 <li><a href="agendamento.html">📅 Agendamento</a></li>
-                            </ul>
-                        </nav>
-                    </section>
+                </ul>
+            </nav>
+        </section>
                 </div>
 
                 <div class="col-md-4">
-                    <section>
-                        <h2>Informações Legais</h2>
-                        <p>
-                            <strong>Minimercado Bom Preço Ltda.</strong><br>
-                            CNPJ: 12.345.678/0001-90<br>
-                            Inscrição Municipal: 123456789
-                        </p>
+        <section>
+            <h2>Informações Legais</h2>
+            <p>
+                <strong>Minimercado Bom Preço Ltda.</strong><br>
+                CNPJ: 12.345.678/0001-90<br>
+                Inscrição Municipal: 123456789
+            </p>
 
-                        <p>
-                            <small>
-                                © 2025 Minimercado Bom Preço. Todos os direitos reservados.<br>
-                                Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
-                            </small>
-                        </p>
-                    </section>
+            <p>
+                <small>
+                    © 2025 Minimercado Bom Preço. Todos os direitos reservados.<br>
+                    Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
+                </small>
+            </p>
+        </section>
                 </div>
             </div>
         </div>
