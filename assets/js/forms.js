@@ -431,7 +431,7 @@ function adicionarEstilosValidacao() {
     styles.id = 'validation-styles';
     styles.textContent = `
         .is-valid {
-            border-color: #28a745 !important;
+            border-color: var(--primary-color) !important;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.8-.8-.8-.8 1.2-1.2.8.8L7.7 1.33 9 2.7l-5.4 5.37-1.3-1.34z'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 12px center;
@@ -440,7 +440,7 @@ function adicionarEstilosValidacao() {
         }
         
         .is-invalid {
-            border-color: #dc3545 !important;
+            border-color: var(--danger-color) !important;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 2.4 2.4M8.2 4.6l-2.4 2.4'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
             background-position: right 12px center;
@@ -453,7 +453,7 @@ function adicionarEstilosValidacao() {
             width: 100%;
             margin-top: 0.25rem;
             font-size: 0.875rem;
-            color: #dc3545;
+            color: var(--danger-color);
         }
         
         .form-group {
@@ -469,15 +469,15 @@ function adicionarEstilosValidacao() {
         }
         
         .alert-danger {
-            color: #721c24;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
+            color: var(--danger-color);
+            background-color: var(--light-color);
+            border-color: var(--border-color);
         }
         
         .alert-success {
-            color: #155724;
-            background-color: #d4edda;
-            border-color: #c3e6cb;
+            color: var(--primary-color);
+            background-color: var(--light-color);
+            border-color: var(--border-color);
         }
         
         .btn-close {

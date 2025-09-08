@@ -11,18 +11,24 @@
 
 /* Variáveis CSS para consistência */
 :root {
-  /* Paleta de cores */
-  --primary-color: #2c5530;      /* Verde escuro - ✓ 4.5:1 */
-  --secondary-color: #3d4a3f;    /* Verde médio escuro - ✓ 4.5:1 */
-  --accent-color: #2e5d32;       /* Verde médio - ✓ 4.5:1 */
-  --warning-color: #d32f2f;      /* Vermelho escuro - ✓ 4.5:1 */
-  --success-color: #2e7d2e;      /* Verde sucesso - ✓ 4.5:1 */
+  /* Paleta de cores simplificada */
+  --primary-color: #2c5530;      /* Verde principal - ✓ 4.5:1 */
+  --danger-color: #d32f2f;       /* Vermelho para erros - ✓ 4.5:1 */
 
   /* Cores neutras */
   --dark-color: #212529;         /* Preto suave - ✓ 8.59:1 */
   --light-color: #f8f9fa;        /* Cinza muito claro */
   --white-color: #ffffff;        /* Branco */
   --gray-color: #495057;         /* Cinza escuro - ✓ 4.5:1 */
+  --gray-light: #6c757d;         /* Cinza médio */
+  --border-color: #dee2e6;       /* Cinza para bordas */
+  --border-light: #ced4da;       /* Cinza claro para bordas */
+  --disabled-color: #e9ecef;     /* Cinza para elementos desabilitados */
+
+  /* Transparências essenciais */
+  --primary-alpha: rgba(44, 85, 48, 0.25);
+  --white-alpha: rgba(255, 255, 255, 0.9);
+  --shadow-alpha: rgba(0, 0, 0, 0.1);
 
   /* Tipografia */
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -39,7 +45,7 @@
 
   /* Bordas e sombras */
   --border-radius: 8px;
-  --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --box-shadow: 0 2px 10px var(--shadow-alpha);
   --transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -55,7 +61,7 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--dark-color);
-  background-color: #f8f9fa;
+  background-color: var(--light-color);
 }
 
 /* Estados de interação */
@@ -66,12 +72,12 @@ a {
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
 a:active {
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 a:focus {
@@ -112,7 +118,7 @@ p {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color) 100%);
   color: var(--white-color);
   padding: var(--spacing-md) 0;
   position: relative;
@@ -154,13 +160,13 @@ nav a {
 
 nav a:hover {
   color: var(--white-color) !important;
-  background-color: rgba(255,255,255,0.2) !important;
+  background-color: var(--white-alpha) !important;
   text-decoration: none !important;
 }
 
 nav a:focus {
   color: var(--white-color) !important;
-  background-color: rgba(255,255,255,0.3) !important;
+  background-color: var(--white-alpha) !important;
   outline: 2px solid var(--white-color) !important;
   outline-offset: 2px !important;
 }
@@ -184,12 +190,12 @@ main {
 }
 
 .product-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px var(--shadow-alpha);
 }
 
 .product-card h3 {
   color: var(--primary-color);
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: var(--spacing-xs);
   margin-bottom: var(--spacing-sm);
 }
@@ -209,12 +215,12 @@ main {
 .price {
   font-size: var(--font-size-large);
   font-weight: bold;
-  color: var(--warning-color);
+  color: var(--danger-color);
 }
 
 /* Botões */
 .btn-custom {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
   color: var(--white-color);
   border: none;
   padding: var(--spacing-xs) var(--spacing-md);
@@ -227,7 +233,7 @@ main {
 }
 
 .btn-custom:hover {
-  background: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 /* Footer */
@@ -239,7 +245,7 @@ footer {
 }
 
 footer h2 {
-  color: var(--accent-color);
+  color: var(--primary-color);
   font-size: var(--font-size-large);
   margin-bottom: var(--spacing-sm);
 }
@@ -249,7 +255,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 /* ===========================================
@@ -277,7 +283,7 @@ header nav ul li a:hover,
 nav a:hover,
 nav ul li a:hover {
   color: var(--white-color) !important;
-  background-color: rgba(255,255,255,0.2) !important;
+  background-color: var(--white-alpha) !important;
   text-decoration: none !important;
 }
 
@@ -286,64 +292,64 @@ header nav ul li a:focus,
 nav a:focus,
 nav ul li a:focus {
   color: var(--white-color) !important;
-  background-color: rgba(255,255,255,0.3) !important;
+  background-color: var(--white-alpha) !important;
   outline: 2px solid var(--white-color) !important;
   outline-offset: 2px !important;
 }
 
 /* Cards headers com cores consistentes */
 .card-header.bg-info {
-  background-color: #0277bd !important;
-  color: #ffffff !important;
+  background-color: var(--gray-color) !important;
+  color: var(--white-color) !important;
 }
 
 .card-header.bg-secondary {
-  background-color: var(--secondary-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 .bg-warning {
-  background-color: #f57c00 !important; /* Laranja mais escuro */
+  background-color: var(--danger-color) !important; /* Laranja mais escuro */
 }
 
 .bg-warning.text-dark,
 .bg-warning,
 .table-warning {
-  background-color: #f57c00 !important; /* Laranja mais escuro */
-  color: #000000 !important; /* Preto para garantir contraste */
+  background-color: var(--danger-color) !important; /* Laranja mais escuro */
+  color: var(--dark-color) !important; /* Preto para garantir contraste */
 }
 
 .bg-info {
-  background-color: #0277bd !important; /* Azul mais escuro - ✓ 4.5:1 */
+  background-color: var(--gray-color) !important; /* Cinza escuro - ✓ 4.5:1 */
 }
 
 .bg-secondary {
-  background-color: var(--secondary-color) !important; /* ✓ 4.5:1 */
+  background-color: var(--primary-color) !important; /* ✓ 4.5:1 */
 }
 
 .badge.bg-warning {
-  background-color: #e65100 !important; /* Laranja ainda mais escuro para badges */
-  color: #ffffff !important;
+  background-color: var(--danger-color) !important; /* Laranja ainda mais escuro para badges */
+  color: var(--white-color) !important;
 }
 
 .badge.bg-success {
-  background-color: var(--success-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 .badge.bg-primary {
   background-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .badge.bg-secondary {
-  background-color: var(--secondary-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 /* Correções para texto colorido */
 .text-success {
-  color: var(--success-color) !important; /* ✓ 4.5:1 contrast */
+  color: var(--primary-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .text-primary {
@@ -351,72 +357,63 @@ nav ul li a:focus {
 }
 
 .text-warning {
-  color: #e65100 !important; /* ✓ 4.5:1 contrast */
+  color: var(--danger-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .text-info {
-  color: #0277bd !important; /* ✓ 4.5:1 contrast */
+  color: var(--gray-color) !important; /* ✓ 4.5:1 contrast */
 }
 
-/* Correções para botões outline */
+/* Override de todos os botões Bootstrap para usar nosso esquema simplificado */
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: var(--primary-color);
+  --bs-btn-active-border-color: var(--primary-color);
+}
+
 .btn-outline-primary {
-  color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:focus {
-  color: #ffffff !important;
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
 }
 
 .btn-outline-success {
-  color: var(--success-color) !important;
-  border-color: var(--success-color) !important;
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
 }
 
-.btn-outline-success:hover,
-.btn-outline-success:focus {
-  color: #ffffff !important;
-  background-color: var(--success-color) !important;
-  border-color: var(--success-color) !important;
-}
-
-.btn-outline-warning {
-  color: #e65100 !important;
-  border-color: #e65100 !important;
-}
-
-.btn-outline-warning:hover,
-.btn-outline-warning:focus {
-  color: #ffffff !important;
-  background-color: #e65100 !important;
-  border-color: #e65100 !important;
-}
-
-.btn-outline-secondary {
-  color: var(--secondary-color) !important;
-  border-color: var(--secondary-color) !important;
-}
-
-.btn-outline-secondary:hover,
-.btn-outline-secondary:focus {
-  color: #ffffff !important;
-  background-color: var(--secondary-color) !important;
-  border-color: var(--secondary-color) !important;
+.btn-info {
+  --bs-btn-bg: var(--gray-color);
+  --bs-btn-border-color: var(--gray-color);
+  --bs-btn-hover-bg: var(--gray-color);
+  --bs-btn-hover-border-color: var(--gray-color);
 }
 
 .btn-outline-info {
-  color: #0277bd !important;
-  border-color: #0277bd !important;
+  --bs-btn-color: var(--gray-color);
+  --bs-btn-border-color: var(--gray-color);
+  --bs-btn-hover-bg: var(--gray-color);
+  --bs-btn-hover-border-color: var(--gray-color);
 }
 
-.btn-outline-info:hover,
-.btn-outline-info:focus {
-  color: #ffffff !important;
-  background-color: #0277bd !important;
-  border-color: #0277bd !important;
+.btn-warning {
+  --bs-btn-bg: var(--danger-color);
+  --bs-btn-border-color: var(--danger-color);
+  --bs-btn-hover-bg: var(--danger-color);
+  --bs-btn-hover-border-color: var(--danger-color);
+}
+
+.btn-outline-warning {
+  --bs-btn-color: var(--danger-color);
+  --bs-btn-border-color: var(--danger-color);
+  --bs-btn-hover-bg: var(--danger-color);
+  --bs-btn-hover-border-color: var(--danger-color);
 }
 
 /* Correções para breadcrumbs */
@@ -430,7 +427,7 @@ nav ul li a:focus {
 }
 
 .breadcrumb-item a:hover {
-  color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
   text-decoration: underline;
 }
 
@@ -442,13 +439,13 @@ nav ul li a:focus {
 .form-control,
 .form-select {
   color: var(--dark-color) !important;
-  border-color: #ced4da;
+  border-color: var(--border-light);
 }
 
 .form-control:focus,
 .form-select:focus {
   border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.25) !important;
+  box-shadow: 0 0 0 3px var(--primary-alpha) !important;
 }
 
 .form-control::placeholder {
@@ -458,20 +455,20 @@ nav ul li a:focus {
 /* Form validation states */
 .form-control:invalid,
 .form-select:invalid {
-  border-color: #d32f2f !important; /* ✓ 4.5:1 contrast */
+  border-color: var(--danger-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .form-control:valid,
 .form-select:valid {
-  border-color: var(--success-color) !important; /* ✓ 4.5:1 contrast */
+  border-color: var(--primary-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .invalid-feedback {
-  color: #d32f2f !important; /* ✓ 4.5:1 contrast */
+  color: var(--danger-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .valid-feedback {
-  color: var(--success-color) !important; /* ✓ 4.5:1 contrast */
+  color: var(--primary-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .form-text {
@@ -486,7 +483,7 @@ nav ul li a:focus {
 
 .form-check-input:focus {
   border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.25) !important;
+  box-shadow: 0 0 0 3px var(--primary-alpha) !important;
 }
 
 /* Links com melhor contraste - APENAS NO CONTEÚDO PRINCIPAL (SEGURO) */
@@ -503,36 +500,36 @@ main .card a:not(.btn):not(.nav-link):not(.breadcrumb-item > a):hover,
 main .card-body a:not(.btn):not(.nav-link):not(.breadcrumb-item > a):hover,
 .card-body p a:not(.btn):hover,
 .card-text a:not(.btn):hover {
-  color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 /* Badge secondary fix */
 .badge.bg-secondary {
-  background-color: var(--secondary-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 /* Table improvements com contraste otimizado */
 .table th,
 .table thead th {
   color: var(--dark-color) !important;
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 .table-light th {
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
   color: var(--dark-color) !important;
 }
 
 .table-dark th,
 .table-dark thead th {
   background-color: var(--dark-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .table-dark td {
   background-color: var(--dark-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 /* Table success com contraste adequado */
@@ -541,8 +538,8 @@ main .card-body a:not(.btn):not(.nav-link):not(.breadcrumb-item > a):hover,
 .table-success th,
 tr.table-success td,
 tr.table-success th {
-  background-color: var(--success-color) !important;
-  color: #ffffff !important; /* Branco sobre verde escuro */
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important; /* Branco sobre verde escuro */
 }
 
 /* Correções específicas para tabela de horários */
@@ -570,21 +567,21 @@ table th,
 .table-dark th,
 .table-dark tbody tr td,
 .table-dark tbody tr th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .table-success td,
 .table-success th,
 tr.table-success td,
 tr.table-success th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .table-warning td,
 .table-warning th,
 tr.table-warning td,
 tr.table-warning th {
-  color: #000000 !important;
+  color: var(--dark-color) !important;
 }
 
 /* Progress bars */
@@ -593,11 +590,11 @@ tr.table-warning th {
 }
 
 .progress-bar.bg-success {
-  background-color: var(--success-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .progress-bar.bg-warning {
-  background-color: #e65100 !important;
+  background-color: var(--danger-color) !important;
 }
 
 .progress-bar.bg-danger {
@@ -613,19 +610,19 @@ tr.table-warning th {
 
 .form-control:disabled,
 .form-select:disabled {
-  background-color: #e9ecef;
+  background-color: var(--disabled-color);
   color: var(--gray-color) !important;
-  border-color: #ced4da;
+  border-color: var(--border-light);
 }
 
 /* Skip links with better contrast */
 .skip-link {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--dark-color) !important;
 }
 
 .skip-link:focus {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
@@ -644,17 +641,17 @@ tr.table-warning th {
 
 .opacity-50 .table-warning td,
 .opacity-50 .table-warning th {
-  color: #000000 !important;
+  color: var(--dark-color) !important;
 }
 
 .opacity-50 .table-success td,
 .opacity-50 .table-success th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .opacity-50 .table-dark td,
 .opacity-50 .table-dark th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 /* Melhorias para elementos com aria-disabled */
@@ -677,17 +674,17 @@ tr.table-warning th {
 
 [aria-disabled="true"] .table-warning td,
 [aria-disabled="true"] .table-warning th {
-  color: #000000 !important;
+  color: var(--dark-color) !important;
 }
 
 [aria-disabled="true"] .table-success td,
 [aria-disabled="true"] .table-success th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 [aria-disabled="true"] .table-dark td,
 [aria-disabled="true"] .table-dark th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 /* Card text improvements */
@@ -739,7 +736,7 @@ em.text-muted,
 }
 
 .text-muted a:hover {
-  color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
   text-decoration: underline;
 }
 
@@ -782,11 +779,11 @@ h1, h2, h3, h4, h5, h6 {
 .bg-success h1, .bg-success h2, .bg-success h3, .bg-success h4, .bg-success h5, .bg-success h6,
 .bg-info h1, .bg-info h2, .bg-info h3, .bg-info h4, .bg-info h5, .bg-info h6,
 .bg-secondary h1, .bg-secondary h2, .bg-secondary h3, .bg-secondary h4, .bg-secondary h5, .bg-secondary h6 {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .bg-warning h1, .bg-warning h2, .bg-warning h3, .bg-warning h4, .bg-warning h5, .bg-warning h6 {
-  color: #000000 !important; /* Para background warning que é mais claro */
+  color: var(--dark-color) !important; /* Para background warning que é mais claro */
 }
 
 /* Headers específicos */
@@ -860,15 +857,15 @@ footer .badge {
 
 /* Classes de texto específicas para card titles */
 .card-title.text-warning {
-  color: #e65100 !important; /* ✓ 4.5:1 contrast sobre fundo claro */
+  color: var(--danger-color) !important; /* ✓ 4.5:1 contrast sobre fundo claro */
 }
 
 .card-title.text-info {
-  color: #0277bd !important; /* ✓ 4.5:1 contrast */
+  color: var(--gray-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 .card-title.text-success {
-  color: var(--success-color) !important; /* ✓ 4.5:1 contrast */
+  color: var(--primary-color) !important; /* ✓ 4.5:1 contrast */
 }
 
 /* Final override para garantir máximo contraste */
@@ -906,7 +903,7 @@ input:disabled,
 select:disabled,
 textarea:disabled {
   color: var(--gray-color) !important;
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 /* =============================================
@@ -920,8 +917,8 @@ textarea:disabled {
 .calendario-container .dia-hoje,
 .calendario-container .dia-selecionado {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
-  border: 1px solid #dee2e6 !important;
+  background-color: var(--white-color) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .calendario-container .dia-semana {
@@ -931,38 +928,38 @@ textarea:disabled {
 
 .calendario-container .dia-disponivel:hover {
   background-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .calendario-container .dia-selecionado {
   background-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .calendario-container .dia-hoje {
-  background-color: var(--accent-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 .calendario-container .dia-bloqueado {
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
   color: var(--gray-color) !important;
 }
 
 .calendario-container .btn-horario {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
-  border: 1px solid #dee2e6 !important;
+  background-color: var(--white-color) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .calendario-container .btn-horario:hover {
   background-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .calendario-container .btn-horario.selecionado {
-  background-color: var(--success-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 /* =============================================
@@ -975,7 +972,7 @@ textarea:disabled {
 [class*="calendario"] .dia,
 [class*="calendario"] div[class*="dia"] {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
+  background-color: var(--white-color) !important;
 }
 
 .calendario-container .dia-semana,
@@ -986,55 +983,55 @@ textarea:disabled {
 .calendario-container .dia-disponivel,
 [class*="calendario"] .dia-disponivel {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
+  background-color: var(--white-color) !important;
 }
 
 .calendario-container .dia-disponivel:hover,
 [class*="calendario"] .dia-disponivel:hover {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
 .calendario-container .dia-selecionado,
 [class*="calendario"] .dia-selecionado {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
 .calendario-container .dia-hoje,
 [class*="calendario"] .dia-hoje {
-  color: #ffffff !important;
-  background-color: var(--accent-color) !important;
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .calendario-container .dia-bloqueado,
 [class*="calendario"] .dia-bloqueado {
   color: var(--gray-color) !important;
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 .calendario-container .dia-passado,
 [class*="calendario"] .dia-passado {
-  color: #6c757d !important;
-  background-color: #f8f9fa !important;
+  color: var(--gray-light) !important;
+  background-color: var(--light-color) !important;
 }
 
 .calendario-container .btn-horario,
 [class*="calendario"] .btn-horario {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
+  background-color: var(--white-color) !important;
 }
 
 .calendario-container .btn-horario:hover,
 [class*="calendario"] .btn-horario:hover {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
 .calendario-container .btn-horario.selecionado,
 [class*="calendario"] .btn-horario.selecionado {
-  color: #ffffff !important;
-  background-color: var(--success-color) !important;
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 /* FORÇA MÁXIMA - Calendário com seletores universais */
@@ -1048,32 +1045,32 @@ textarea:disabled {
 
 * .calendario-container .dia-disponivel {
   color: var(--dark-color) !important;
-  background-color: #ffffff !important;
+  background-color: var(--white-color) !important;
 }
 
 * .calendario-container .dia-disponivel:hover {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
 * .calendario-container .dia-selecionado {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
   background-color: var(--primary-color) !important;
 }
 
 * .calendario-container .dia-hoje {
-  color: #ffffff !important;
-  background-color: var(--accent-color) !important;
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 * .calendario-container .dia-bloqueado {
   color: var(--gray-color) !important;
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 * .calendario-container .dia-passado {
-  color: #6c757d !important;
-  background-color: #f8f9fa !important;
+  color: var(--gray-light) !important;
+  background-color: var(--light-color) !important;
 }
 
 /* Calendário - força em elementos gerados dinamicamente */
@@ -1101,29 +1098,29 @@ div[class*="dia"],
 /* Linha warning específica - CONTRASTE MÁXIMO */
 .table tbody tr.table-warning td,
 .table tbody tr.table-warning th {
-  background-color: #f57c00 !important;
-  color: #000000 !important;
+  background-color: var(--danger-color) !important;
+  color: var(--dark-color) !important;
   font-weight: 500 !important;
 }
 
 /* Linha success específica */
 .table tbody tr.table-success td,
 .table tbody tr.table-success th {
-  background-color: var(--success-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 /* SEGURANÇA MÁXIMA - ÚLTIMA LINHA DE DEFESA */
 .table-warning td,
 .table-warning th {
-  color: #000000 !important;
-  background-color: #f57c00 !important;
+  color: var(--dark-color) !important;
+  background-color: var(--danger-color) !important;
 }
 
 .table-success td,
 .table-success th {
-  color: #ffffff !important;
-  background-color: var(--success-color) !important;
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 /* Override para qualquer td/th que possa estar problemático */
@@ -1148,23 +1145,23 @@ div[class*="dia"],
 /* Exceções para backgrounds coloridos */
 .table-dark td,
 .table-dark th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .table-warning td,
 .table-warning th {
-  color: #000000 !important;
+  color: var(--dark-color) !important;
   font-weight: 600 !important; /* Peso maior para melhor legibilidade */
 }
 
 .table-success td,
 .table-success th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 /* Garantir que texto "Fechado" seja visível */
 .table td:contains("Fechado") {
-  color: #000000 !important;
+  color: var(--dark-color) !important;
   font-weight: 600 !important;
 }
 
@@ -1195,7 +1192,7 @@ h4:contains("Horários de Funcionamento"),
 .card .table-dark th,
 .card-body .table-dark td,
 .card-body .table-dark th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 /* =============================================
@@ -1230,7 +1227,7 @@ table.table-dark td,
 table.table-dark th,
 .card .table-dark td,
 .card .table-dark th {
-  color: #ffffff !important;
+  color: var(--white-color) !important;
 }
 
 .table-warning td,
@@ -1239,8 +1236,8 @@ table.table-warning td,
 table.table-warning th,
 tr.table-warning td,
 tr.table-warning th {
-  color: #000000 !important;
-  background-color: #f57c00 !important;
+  color: var(--dark-color) !important;
+  background-color: var(--danger-color) !important;
 }
 
 .table-success td,
@@ -1249,8 +1246,8 @@ table.table-success td,
 table.table-success th,
 tr.table-success td,
 tr.table-success th {
-  color: #ffffff !important;
-  background-color: var(--success-color) !important;
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 /* =============================================
@@ -1294,7 +1291,7 @@ table {
 /* Linha de destaque usando variável warning */
 .table tbody tr.table-warning th,
 .table tbody tr.table-warning td {
-  background-color: var(--warning-color);
+  background-color: var(--danger-color);
   color: var(--white-color);
 }
 
@@ -1318,7 +1315,7 @@ table {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
   color: var(--white-color);
 }
 
@@ -1399,12 +1396,12 @@ table {
 .dia-disponivel {
   background-color: var(--white-color);
   color: var(--dark-color);
-  border: 2px solid var(--success-color);
+  border: 2px solid var(--primary-color);
   font-weight: 500;
 }
 
 .dia-disponivel:hover {
-  background-color: var(--success-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -1415,9 +1412,9 @@ table {
 }
 
 .dia-hoje {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--primary-color);
   font-weight: 600;
 }
 
@@ -1462,7 +1459,7 @@ table {
 
 .btn-horario {
   padding: 12px;
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--primary-color);
   background: var(--white-color);
   color: var(--dark-color);
   border-radius: 8px;
@@ -1473,7 +1470,7 @@ table {
 }
 
 .btn-horario:hover {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -1490,54 +1487,25 @@ table {
   opacity: 0.6;
 }
 
-/* Classes utilitárias para mostrar/esconder */
-.hidden {
-  display: none !important;
-}
-
-.visible {
-  display: block !important;
-}
-
-/* Classes utilitárias para largura e altura */
+/* Classes utilitárias customizadas */
 .w-30 {
   width: 30% !important;
 }
 
-.w-100 {
-  width: 100% !important;
-}
-
-/* Classes para imagens */
-.img-cover {
-  object-fit: cover;
-}
-
-.img-height-200 {
+/* Classes para imagens customizadas */
+.img-h-200 {
   height: 200px;
 }
 
-.img-height-400 {
+.img-h-400 {
   height: 400px;
 }
 
-/* Responsividade do calendário */
+/* Responsividade do calendário - usando classes Bootstrap quando possível */
 @media (max-width: 768px) {
   .calendario-container {
     margin: 0 10px;
     max-width: none;
-  }
-  
-  .calendario-header {
-    padding: 15px;
-  }
-  
-  .mes-ano {
-    font-size: 1.2rem;
-  }
-  
-  .calendario-grid {
-    padding: 15px;
   }
   
   .horarios-grid {
@@ -1546,7 +1514,6 @@ table {
   }
   
   .btn-horario {
-    padding: 10px 8px;
     font-size: 0.9rem;
   }
 }
@@ -1565,18 +1532,18 @@ table {
 }
 
 .badge.bg-light {
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
   color: var(--dark-color) !important; /* ✓ 8.59:1 contrast */
 }
 
 .badge.bg-dark {
   background-color: var(--dark-color) !important;
-  color: #ffffff !important; /* ✓ 15.3:1 contrast */
+  color: var(--white-color) !important; /* ✓ 15.3:1 contrast */
 }
 
 /* Garantir contraste para elementos de progresso */
 .progress {
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 /* Todos os elementos com display inline que podem ter problemas */
@@ -1594,7 +1561,7 @@ em, i, strong, b, small {
 /* Elementos de código */
 code, pre {
   color: var(--dark-color) !important;
-  background-color: #f8f9fa !important;
+  background-color: var(--light-color) !important;
 }
 
 /* Garantir contraste final para listas */
@@ -1643,8 +1610,8 @@ hr {
 .table-warning th,
 tr.table-warning td,
 tr.table-warning th {
-  background-color: #f57c00 !important; /* Fundo laranja escuro */
-  color: #000000 !important; /* Texto preto para máximo contraste */
+  background-color: var(--danger-color) !important; /* Fundo laranja escuro */
+  color: var(--dark-color) !important; /* Texto preto para máximo contraste */
 }
 
 /* Table striped rows com contraste adequado */
@@ -1661,15 +1628,8 @@ tr.table-warning th {
 }
 
 /* Estados de foco melhorados */
-.btn:focus,
-.btn-outline-primary:focus,
-.btn-outline-success:focus,
-.btn-outline-secondary:focus,
-.btn-outline-warning:focus,
-.btn-outline-info:focus {
-  outline: 2px solid var(--primary-color) !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.25) !important;
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem var(--primary-alpha);
 }
 
 /* ===========================================
@@ -1754,14 +1714,8 @@ tr.table-warning th {
    UTILIDADES
    =========================================== */
 
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
+/* Removidas - usar classes nativas do Bootstrap: 
+   .text-center, .text-end, .mb-*, .mt-* */
 
 /* Classes para acessibilidade */
 .sr-only {

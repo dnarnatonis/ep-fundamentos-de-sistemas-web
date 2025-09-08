@@ -311,7 +311,7 @@ function adicionarEstilosCarrossel() {
             margin: 0 auto;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 32px var(--shadow-alpha);
             background: white;
         }
         
@@ -356,7 +356,7 @@ function adicionarEstilosCarrossel() {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: #ff4757;
+            background: var(--danger-color);
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
@@ -379,7 +379,7 @@ function adicionarEstilosCarrossel() {
         }
         
         .slide-category {
-            color: #666;
+            color: var(--gray-color);
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -389,13 +389,13 @@ function adicionarEstilosCarrossel() {
         .slide-title {
             font-size: 1.8rem;
             font-weight: 600;
-            color: #2c5530;
+            color: var(--primary-color);
             margin-bottom: 15px;
             line-height: 1.2;
         }
         
         .slide-description {
-            color: #666;
+            color: var(--gray-color);
             margin-bottom: 20px;
             line-height: 1.5;
         }
@@ -405,7 +405,7 @@ function adicionarEstilosCarrossel() {
         }
         
         .price-label {
-            color: #ff4757;
+            color: var(--danger-color);
             font-weight: 600;
             margin-right: 8px;
         }
@@ -413,7 +413,7 @@ function adicionarEstilosCarrossel() {
         .price-value {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #2c5530;
+            color: var(--primary-color);
         }
         
         .slide-actions {
@@ -437,8 +437,8 @@ function adicionarEstilosCarrossel() {
             height: 45px;
             border-radius: 50%;
             border: none;
-            background: rgba(255,255,255,0.9);
-            color: #2c5530;
+            background: var(--white-alpha);
+            color: var(--primary-color);
             font-size: 1.5rem;
             cursor: pointer;
             pointer-events: all;
@@ -446,12 +446,12 @@ function adicionarEstilosCarrossel() {
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 12px var(--shadow-alpha);
         }
         
         .carousel-btn:hover {
             background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow-alpha);
         }
         
         .carousel-indicators {
@@ -468,7 +468,7 @@ function adicionarEstilosCarrossel() {
             height: 12px;
             border-radius: 50%;
             border: none;
-            background: rgba(255,255,255,0.6);
+            background: var(--white-alpha);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -483,12 +483,12 @@ function adicionarEstilosCarrossel() {
             left: 0;
             width: 100%;
             height: 3px;
-            background: rgba(255,255,255,0.3);
+            background: var(--white-alpha);
         }
         
         .progress-bar {
             height: 100%;
-            background: #2c5530;
+            background: var(--primary-color);
             width: 0;
         }
         

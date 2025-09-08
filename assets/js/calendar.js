@@ -59,10 +59,10 @@ class CalendarioAgendamento {
                     <div class="dias-mes" id="dias-mes"></div>
                 </div>
                 
-                <div class="horarios-container hidden" id="horarios-container">
+                <div class="horarios-container d-none" id="horarios-container">
                     <h4>Horários Disponíveis</h4>
                     <div class="horarios-grid" id="horarios-grid"></div>
-                    <div class="resumo-agendamento hidden" id="resumo-agendamento">
+                    <div class="resumo-agendamento d-none" id="resumo-agendamento">
                         <h5>Resumo do Agendamento</h5>
                         <p><strong>Data:</strong> <span id="data-resumo"></span></p>
                         <p><strong>Horário:</strong> <span id="horario-resumo"></span></p>
@@ -225,7 +225,7 @@ class CalendarioAgendamento {
         `).join('');
         
         grid.innerHTML = botoesHorarios;
-        container.classList.remove('hidden');
+        container.classList.remove('d-none');
         
         // Scroll suave para os horários
         container.scrollIntoView({ behavior: 'smooth' });
@@ -272,7 +272,7 @@ class CalendarioAgendamento {
         dataResumo.textContent = dataFormatada;
         horarioResumo.textContent = this.horarioSelecionado;
         
-        resumo.classList.remove('hidden');
+        resumo.classList.remove('d-none');
         resumo.scrollIntoView({ behavior: 'smooth' });
     }
     
@@ -319,8 +319,8 @@ class CalendarioAgendamento {
         this.horarioSelecionado = null;
         
         // Esconder containers
-        document.getElementById('horarios-container').classList.add('hidden');
-        document.getElementById('resumo-agendamento').classList.add('hidden');
+        document.getElementById('horarios-container').classList.add('d-none');
+        document.getElementById('resumo-agendamento').classList.add('d-none');
         
         // Remover seleções visuais
         document.querySelectorAll('.dia-selecionado, .btn-horario.selecionado').forEach(el => {

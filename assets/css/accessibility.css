@@ -351,9 +351,8 @@ summary {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #66bb6a;
-    --secondary-color: #81c784;
-    --accent-color: #a5d6a7;
+    --primary-color: #2c5530;
+    --danger-color: #d32f2f;
     --dark-color: #ffffff;
     --light-color: #cccccc;
     --white-color: #1a1a1a;
