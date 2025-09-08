@@ -198,12 +198,6 @@ O projeto está configurado para publicação via GitHub Pages, permitindo acess
 - **Navegação intuitiva** - Skip links, ARIA labels, estrutura semântica
 - **Performance otimizada** - Lazy loading, minificação, CDN
 
-## Próximas Fases
-
-- **Fase 3:** Integração com back-end para persistência de dados
-- **Fase 4:** Implementação de sistema de carrinho de compras
-- **Fase 5:** API REST e funcionalidades avançadas de e-commerce
-
 ## Contribuição
 
 Para reportar problemas ou sugerir melhorias:

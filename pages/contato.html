@@ -61,25 +61,48 @@
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <label for="nome" class="form-label">Nome Completo <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu nome completo" maxlength="100">
+                                        <input type="text"
+                                               class="form-control"
+                                               id="nome"
+                                               name="nome"
+                                               required
+                                               placeholder="Digite seu nome completo"
+                                               maxlength="100">
                                         <div class="invalid-feedback">Por favor, digite seu nome completo.</div>
                                     </div>
 
                                     <div class="col-12 col-md-6">
                                         <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control" id="email" name="email" required placeholder="seu@email.com" maxlength="100">
+                                        <input type="email"
+                                               class="form-control"
+                                               id="email"
+                                               name="email"
+                                               required
+                                               placeholder="seu@email.com"
+                                               maxlength="100">
                                         <div class="invalid-feedback">Por favor, digite um e-mail válido.</div>
                                     </div>
 
                                     <div class="col-12 col-md-6">
                                         <label for="telefone" class="form-label">Telefone</label>
-                                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(51) 99999-9999" pattern="[\(]?[0-9]{2}[\)]?[\s]?[0-9]{4,5}[\-]?[0-9]{4}" title="Digite um telefone válido: (11) 99999-9999">
+                                        <input type="tel"
+                                               class="form-control"
+                                               id="telefone"
+                                               name="telefone"
+                                               placeholder="(51) 99999-9999"
+                                               pattern="[\(]?[0-9]{2}[\)]?[\s]?[0-9]{4,5}[\-]?[0-9]{4}"
+                                               title="Digite um telefone válido: (11) 99999-9999">
                                         <div class="form-text">Formato: (51) 99999-9999</div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="endereco" class="form-label">Endereço (opcional)</label>
-                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade" maxlength="200">
+                                        <input type="text"
+                                               class="form-control"
+                                               id="endereco"
+                                               name="endereco"
+                                               placeholder="Rua, número, bairro, cidade"
+                                               maxlength="200">
                                     </div>
                                 </div>
                 </fieldset>
@@ -91,7 +114,10 @@
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <label for="assunto" class="form-label">Assunto <span class="text-danger">*</span></label>
-                                        <select class="form-select" id="assunto" name="assunto" required>
+                                        <select class="form-select" 
+                                                id="assunto" 
+                                                name="assunto" 
+                                                required>
                             <option value="">Selecione o assunto</option>
                                             <option value="pedido">🛒 Fazer Pedido</option>
                                             <option value="duvida">❓ Dúvida sobre Produtos</option>
@@ -109,23 +135,24 @@
                                         <div class="row g-2">
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="contato-email" name="preferencia-contato" value="email" checked>
+                                                    <input class="form-check-input" type="radio" id="contato-email" name="preferencia-contato" value="email" required checked>
                                                     <label class="form-check-label" for="contato-email">📧 E-mail</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="contato-telefone" name="preferencia-contato" value="telefone">
+                                                    <input class="form-check-input" type="radio" id="contato-telefone" name="preferencia-contato" value="telefone" required>
                                                     <label class="form-check-label" for="contato-telefone">📞 Telefone</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="contato-whatsapp" name="preferencia-contato" value="whatsapp">
+                                                    <input class="form-check-input" type="radio" id="contato-whatsapp" name="preferencia-contato" value="whatsapp" required>
                                                     <label class="form-check-label" for="contato-whatsapp">📱 WhatsApp</label>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="invalid-feedback">Por favor, selecione uma preferência de contato.</div>
                                     </div>
                                 </div>
                 </fieldset>
