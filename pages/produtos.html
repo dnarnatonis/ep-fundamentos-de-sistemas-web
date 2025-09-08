@@ -15,21 +15,34 @@
     <link rel="stylesheet" href="../assets/css/accessibility.css">
 </head>
 <body>
-    <header>
-        <h1>Minimercado Bom Preço</h1>
-        <p>Qualidade e Economia para sua Família</p>
+    <!-- Skip Links para Acessibilidade -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+        <a href="#navigation" class="skip-link">Pular para navegação</a>
+    </div>
 
-        <nav>
-            <ul>
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <h1>Minimercado Bom Preço</h1>
+            <p>Qualidade e Economia para sua Família</p>
+
+            <nav id="navigation" role="navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html" aria-current="page">Produtos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contador de visitas -->
+            <div id="contador-visitas" class="text-center mt-3" role="status" aria-live="polite"></div>
+        </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section>
             <h2>Nossos Produtos</h2>
             <p>Confira nossa seleção de produtos organizados por categoria, sempre com qualidade e os melhores preços.</p>
@@ -169,43 +182,55 @@
         </section>
     </main>
 
-    <footer>
-        <section>
-            <h2>Contato</h2>
-            <p>
-                <strong>Telefone:</strong> (51) 3333-4444<br>
-                <strong>WhatsApp:</strong> (51) 99999-8888<br>
-                <strong>E-mail:</strong> contato@minimercadobompreco.com.br
-            </p>
-        </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <section>
+                        <h2>Contato</h2>
+                        <p>
+                            <strong>📞 Telefone:</strong> (51) 3333-4444<br>
+                            <strong>📱 WhatsApp:</strong> (51) 99999-8888<br>
+                            <strong>📧 E-mail:</strong> contato@minimercadobompreco.com.br
+                        </p>
+                    </section>
+                </div>
 
-        <section>
-            <h2>Navegação</h2>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-        </section>
+                <div class="col-md-4">
+                    <section>
+                        <h2>Navegação</h2>
+                        <nav>
+                            <ul class="list-unstyled">
+                                <li><a href="../index.html">🏠 Início</a></li>
+                                <li><a href="produtos.html">📦 Produtos</a></li>
+                                <li><a href="servicos.html">🛎️ Serviços</a></li>
+                                <li><a href="contato.html">📞 Contato</a></li>
+                                <li><a href="cadastro.html">📝 Cadastro</a></li>
+                                <li><a href="agendamento.html">📅 Agendamento</a></li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
 
-        <section>
-            <h2>Informações Legais</h2>
-            <p>
-                <strong>Minimercado Bom Preço Ltda.</strong><br>
-                CNPJ: 12.345.678/0001-90<br>
-                Inscrição Municipal: 123456789
-            </p>
+                <div class="col-md-4">
+                    <section>
+                        <h2>Informações Legais</h2>
+                        <p>
+                            <strong>Minimercado Bom Preço Ltda.</strong><br>
+                            CNPJ: 12.345.678/0001-90<br>
+                            Inscrição Municipal: 123456789
+                        </p>
 
-            <p>
-                <small>
-                    © 2025 Minimercado Bom Preço. Todos os direitos reservados.<br>
-                    Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
-                </small>
-            </p>
-        </section>
+                        <p>
+                            <small>
+                                © 2025 Minimercado Bom Preço. Todos os direitos reservados.<br>
+                                Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
+                            </small>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap 5 JS -->
