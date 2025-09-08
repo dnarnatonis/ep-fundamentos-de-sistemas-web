@@ -521,16 +521,7 @@ main .card-body a:not(.btn):not(.nav-link):not(.breadcrumb-item > a):hover,
   color: var(--dark-color) !important;
 }
 
-.table-dark th,
-.table-dark thead th {
-  background-color: var(--dark-color) !important;
-  color: var(--white-color) !important;
-}
-
-.table-dark td {
-  background-color: var(--dark-color) !important;
-  color: var(--white-color) !important;
-}
+/* Regras para table-dark removidas - usando apenas table-light */
 
 /* Table success com contraste adequado */
 .table-success,
@@ -563,12 +554,7 @@ table th,
 }
 
 /* Exceções para tabelas com backgrounds escuros */
-.table-dark td,
-.table-dark th,
-.table-dark tbody tr td,
-.table-dark tbody tr th {
-  color: var(--white-color) !important;
-}
+/* Regras para table-dark removidas */
 
 .table-success td,
 .table-success th,
@@ -649,10 +635,7 @@ tr.table-warning th {
   color: var(--white-color) !important;
 }
 
-.opacity-50 .table-dark td,
-.opacity-50 .table-dark th {
-  color: var(--white-color) !important;
-}
+/* Regras para table-dark com opacity removidas */
 
 /* Melhorias para elementos com aria-disabled */
 [aria-disabled="true"] {
@@ -682,10 +665,7 @@ tr.table-warning th {
   color: var(--white-color) !important;
 }
 
-[aria-disabled="true"] .table-dark td,
-[aria-disabled="true"] .table-dark th {
-  color: var(--white-color) !important;
-}
+/* Regras para table-dark disabled removidas */
 
 /* Card text improvements */
 .card-text.text-muted {
@@ -1143,10 +1123,7 @@ div[class*="dia"],
 }
 
 /* Exceções para backgrounds coloridos */
-.table-dark td,
-.table-dark th {
-  color: var(--white-color) !important;
-}
+/* Regras table-dark removidas */
 
 .table-warning td,
 .table-warning th {
@@ -1174,8 +1151,7 @@ h4:contains("Horários de Funcionamento"),
 }
 
 /* Headers de tabela com contraste total */
-.table thead th,
-.table-dark thead th {
+.table thead th {
   font-weight: 600 !important;
 }
 
@@ -1188,12 +1164,7 @@ h4:contains("Horários de Funcionamento"),
 }
 
 /* Exceção para headers escuros */
-.card .table-dark td,
-.card .table-dark th,
-.card-body .table-dark td,
-.card-body .table-dark th {
-  color: var(--white-color) !important;
-}
+/* Regras card table-dark removidas */
 
 /* =============================================
    FORÇA BRUTA FINAL - TABELAS SEMPRE LEGÍVEIS
@@ -1221,14 +1192,7 @@ tbody th,
 }
 
 /* EXCEÇÕES para backgrounds específicos com prioridade ABSOLUTA */
-.table-dark td,
-.table-dark th,
-table.table-dark td,
-table.table-dark th,
-.card .table-dark td,
-.card .table-dark th {
-  color: var(--white-color) !important;
-}
+/* Regras gerais table-dark removidas */
 
 .table-warning td,
 .table-warning th,

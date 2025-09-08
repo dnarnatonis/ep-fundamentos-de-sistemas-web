@@ -346,28 +346,10 @@ summary {
 }
 
 /* ===========================================
-   DARK MODE SUPPORT
+   DARK MODE DESABILITADO
    =========================================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #2c5530;
-    --danger-color: #d32f2f;
-    --dark-color: #ffffff;
-    --light-color: #cccccc;
-    --white-color: #1a1a1a;
-  }
-
-  body {
-    background-color: #1a1a1a;
-    color: #ffffff;
-  }
-
-  .product-card {
-    background-color: #2d2d2d;
-    color: #ffffff;
-  }
-}
+/* Dark mode removido para manter consistência visual */
 
 /* ===========================================
    UTILITIES PARA ACESSIBILIDADE
