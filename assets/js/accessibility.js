@@ -529,7 +529,6 @@ function adicionarEstilosAcessibilidade() {
         .panel-toggle:focus {
             background: #2c5530;
             color: white;
-            transform: scale(1.1);
         }
         
         .panel-content {

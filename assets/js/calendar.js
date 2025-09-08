@@ -451,7 +451,6 @@ function adicionarEstilosCalendario() {
         
         .btn-nav:hover {
             background: rgba(255,255,255,0.3);
-            transform: scale(1.1);
         }
         
         .mes-ano {
@@ -509,7 +508,6 @@ function adicionarEstilosCalendario() {
         
         .dia-disponivel:hover {
             background: #e9ecef;
-            transform: scale(1.05);
         }
         
         .dia-disponivel:focus {
@@ -526,7 +524,6 @@ function adicionarEstilosCalendario() {
         .dia-selecionado {
             background: #4a7c59 !important;
             color: white !important;
-            transform: scale(1.1);
         }
         
         .dia-passado {
@@ -566,14 +563,13 @@ function adicionarEstilosCalendario() {
             color: #2c5530;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.2s ease, color 0.2s ease;
             font-weight: 500;
         }
         
         .btn-horario:hover {
             background: #2c5530;
             color: white;
-            transform: translateY(-2px);
         }
         
         .btn-horario.selecionado {

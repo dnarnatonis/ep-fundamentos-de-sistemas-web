@@ -351,9 +351,6 @@ function adicionarEstilosCarrossel() {
             transition: transform 0.6s ease;
         }
         
-        .carousel-slide:hover .slide-image img {
-            transform: scale(1.05);
-        }
         
         .promocao-tag {
             position: absolute;
@@ -369,8 +366,8 @@ function adicionarEstilosCarrossel() {
         }
         
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
         }
         
         .slide-content {
@@ -454,8 +451,7 @@ function adicionarEstilosCarrossel() {
         
         .carousel-btn:hover {
             background: white;
-            transform: scale(1.1);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .carousel-indicators {
@@ -479,7 +475,6 @@ function adicionarEstilosCarrossel() {
         
         .indicator.active {
             background: white;
-            transform: scale(1.2);
         }
         
         .carousel-progress {
