@@ -72,11 +72,12 @@ Cada serviço possui descrição completa e informações de valor.
 │   │   ├── style.css       # CSS customizado com variáveis e pseudo-elementos
 │   │   ├── responsive.css  # Media queries e design responsivo
 │   │   ├── accessibility.css # Recursos de acessibilidade
-│   │   └── carousel.css    # Estilos específicos do carrossel
+│   │   ├── carousel.css    # Estilos específicos do carrossel
+│   │   └── forms.css       # Estilos de validação e formulários
 │   ├── js/
 │   │   ├── main.js         # JavaScript principal (arrays, DOM, funções temporais)
 │   │   ├── carousel.js     # Carrossel interativo (funcionalidade)
-│   │   ├── forms.js        # Validação de formulários
+│   │   ├── forms.js        # Validação de formulários (funcionalidade)
 │   │   ├── calendar.js     # Sistema de calendário
 │   │   └── accessibility.js # Recursos de acessibilidade
 │   └── img/
