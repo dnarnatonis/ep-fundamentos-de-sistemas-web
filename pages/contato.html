@@ -51,17 +51,11 @@
                     <p class="lead">Estamos aqui para atendê-lo! Envie suas dúvidas, sugestões ou faça seus pedidos através dos canais abaixo.</p>
                 </header>
 
-                <div class="row g-4">
-            <div class="col-12 col-lg-8">
-                <section class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h2 class="card-title h4 mb-0">📝 Formulário de Contato</h2>
-                    </div>
-                    
-                    <div class="card-body">
-                        <form action="#" method="post" class="needs-validation" novalidate>
-                            <fieldset class="mb-4">
-                                <legend class="h5 text-primary mb-3">👤 Dados Pessoais</legend>
+                <!-- Formulário de contato -->
+                <form action="#" method="post" class="needs-validation" novalidate>
+                    <!-- Dados pessoais -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">👤 Dados Pessoais</legend>
 
                                 <div class="row g-3">
                                     <div class="col-12">
@@ -89,8 +83,9 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset class="mb-4">
-                                <legend class="h5 text-primary mb-3">📋 Tipo de Contato</legend>
+                    <!-- Tipo de contato -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">📋 Tipo de Contato</legend>
 
                                 <div class="row g-3">
                                     <div class="col-12">
@@ -134,8 +129,9 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset class="mb-4">
-                                <legend class="h5 text-primary mb-3">🛎️ Serviços de Interesse</legend>
+                    <!-- Serviços de interesse -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">🛎️ Serviços de Interesse</legend>
                                 <p class="text-muted mb-3">Marque os serviços que mais lhe interessam:</p>
 
                                 <div class="row g-2">
@@ -166,141 +162,198 @@
                                 </div>
                             </fieldset>
 
-                <fieldset>
-                    <legend>Mensagem</legend>
+                    <!-- Mensagem -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">💬 Mensagem</legend>
 
-                    <p>
-                        <label for="mensagem">Sua Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem, dúvida ou pedido aqui..." rows="8" cols="50" maxlength="1000"></textarea>
-                    </p>
+                        <div class="form-group mb-3">
+                            <label for="mensagem" class="form-label">Sua Mensagem <span class="text-danger">*</span></label>
+                            <textarea class="form-control" 
+                                      id="mensagem" 
+                                      name="mensagem" 
+                                      required 
+                                      placeholder="Digite sua mensagem, dúvida ou pedido aqui..." 
+                                      rows="8" 
+                                      maxlength="1000"></textarea>
+                            <div class="form-text">Máximo 1000 caracteres</div>
+                            <div class="invalid-feedback">Por favor, digite sua mensagem.</div>
+                        </div>
 
-                    <p>
-                        <label for="data-contato">Melhor data para contato (opcional):</label>
-                        <input type="date" id="data-contato" name="data-contato" min="2024-01-01">
-                    </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="data-contato" class="form-label">Melhor data para contato (opcional)</label>
+                                    <input type="date" 
+                                           class="form-control" 
+                                           id="data-contato" 
+                                           name="data-contato" 
+                                           min="2025-01-01">
+                                </div>
+                            </div>
 
-                    <p>
-                        <label for="horario-contato">Melhor horário para contato:</label>
-                        <select id="horario-contato" name="horario-contato">
-                            <option value="">Qualquer horário</option>
-                            <option value="manha">Manhã (8h às 12h)</option>
-                            <option value="tarde">Tarde (12h às 18h)</option>
-                            <option value="noite">Noite (18h às 20h)</option>
-                        </select>
-                    </p>
-                </fieldset>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="horario-contato" class="form-label">Melhor horário para contato</label>
+                                    <select class="form-select" id="horario-contato" name="horario-contato">
+                                        <option value="">Qualquer horário</option>
+                                        <option value="manha">Manhã (8h às 12h)</option>
+                                        <option value="tarde">Tarde (12h às 18h)</option>
+                                        <option value="noite">Noite (18h às 20h)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Finalizar</legend>
+                    <!-- Finalização -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">✅ Finalização</legend>
 
-                    <p>
-                        <input type="checkbox" id="termos" name="termos" required>
-                        <label for="termos">Concordo com o tratamento dos meus dados conforme a política de privacidade</label>
-                    </p>
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="termos" 
+                                       name="termos" 
+                                       required>
+                                <label class="form-check-label" for="termos">
+                                    <span class="text-danger">*</span> Concordo com o tratamento dos meus dados conforme a <a href="#" target="_blank">política de privacidade</a>
+                                </label>
+                                <div class="invalid-feedback">Você deve aceitar os termos para continuar</div>
+                            </div>
+                        </div>
 
-                    <p>
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Desejo receber ofertas e novidades por e-mail</label>
-                    </p>
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="newsletter" 
+                                       name="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Desejo receber ofertas e novidades por e-mail
+                                </label>
+                            </div>
+                        </div>
 
-                    <p>
-                        <button type="submit">Enviar Mensagem</button>
-                        <button type="reset">Limpar Formulário</button>
-                    </p>
-                </fieldset>
-            </form>
-        </section>
+                        <!-- Ações do formulário -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="reset" class="btn btn-outline-secondary me-md-2">
+                                🔄 Limpar Formulário
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                📧 Enviar Mensagem
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
 
-        <section>
-            <h2>Outros Canais de Contato</h2>
+                <!-- Outros canais de contato -->
+                <section class="mt-5">
+                    <h3 class="text-primary mb-4">📞 Outros Canais de Contato</h3>
 
-            <article>
-                <h3>Atendimento por Telefone</h3>
-                <p>
-                    <strong>Telefone Fixo:</strong> (51) 3333-4444<br>
-                    <strong>Horário:</strong> Segunda a Sexta, 07h00 às 20h00 | Sábados, 07h00 às 18h00 | Domingos, 08h00 às 14h00
-                </p>
-            </article>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <div class="display-5 text-primary mb-3">📞</div>
+                                    <h4 class="card-title">Atendimento por Telefone</h4>
+                                    <p class="card-text">
+                                        <strong>Telefone Fixo:</strong> (51) 3333-4444<br>
+                                        <strong>Horário:</strong> Segunda a Sexta, 07h00 às 20h00 | Sábados, 07h00 às 18h00 | Domingos, 08h00 às 14h00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-            <article>
-                <h3>WhatsApp</h3>
-                <p>
-                    <strong>Número:</strong> (51) 99999-8888<br>
-                    <strong>Horário:</strong> Segunda a Sábado, 08h00 às 20h00 | Domingos, 09h00 às 14h00<br>
-                    <em>Ideal para pedidos rápidos e dúvidas sobre produtos</em>
-                </p>
-            </article>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <div class="display-5 text-success mb-3">📱</div>
+                                    <h4 class="card-title">WhatsApp</h4>
+                                    <p class="card-text">
+                                        <strong>Número:</strong> (51) 99999-8888<br>
+                                        <strong>Horário:</strong> Segunda a Sábado, 08h00 às 20h00 | Domingos, 09h00 às 14h00<br>
+                                        <em>Ideal para pedidos rápidos e dúvidas sobre produtos</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-            <article>
-                <h3>E-mail</h3>
-                <p>
-                    <strong>Geral:</strong> contato@minimercadobompreco.com.br<br>
-                    <strong>Pedidos:</strong> pedidos@minimercadobompreco.com.br<br>
-                    <strong>Sugestões:</strong> sugestoes@minimercadobompreco.com.br<br>
-                    <em>Resposta em até 24 horas</em>
-                </p>
-            </article>
-        </section>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <div class="display-5 text-info mb-3">📧</div>
+                                    <h4 class="card-title">E-mail</h4>
+                                    <p class="card-text">
+                                        <strong>Geral:</strong> contato@minimercadobompreco.com.br<br>
+                                        <strong>Pedidos:</strong> pedidos@minimercadobompreco.com.br<br>
+                                        <strong>Sugestões:</strong> sugestoes@minimercadobompreco.com.br<br>
+                                        <em>Resposta em até 24 horas</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <section>
-            <h2>Localização</h2>
+                <!-- Localização -->
+                <section class="mt-5">
+                    <h3 class="text-primary mb-4">📍 Localização</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Endereço da Loja</h4>
+                                    <address class="card-text">
+                                        <strong>Minimercado Bom Preço</strong><br>
+                                        Rua das Flores, 123 - Centro<br>
+                                        Porto Alegre - RS<br>
+                                        CEP: 90000-000
+                                    </address>
 
-            <article>
-                <h3>Endereço da Loja</h3>
-                <address>
-                    <strong>Minimercado Bom Preço</strong><br>
-                    Rua das Flores, 123 - Centro<br>
-                    Porto Alegre - RS<br>
-                    CEP: 90000-000
-                </address>
+                                    <h5>Como Chegar</h5>
+                                    <ul>
+                                        <li><strong>Transporte Público:</strong> Linhas de ônibus 101, 102 e 205 (Parada Centro)</li>
+                                        <li><strong>Carro:</strong> Estacionamento gratuito na rua em frente à loja</li>
+                                        <li><strong>A pé:</strong> 3 quadras da Praça Central</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                <h4>Como Chegar</h4>
-                <ul>
-                    <li><strong>Transporte Público:</strong> Linhas de ônibus 101, 102 e 205 (Parada Centro)</li>
-                    <li><strong>Carro:</strong> Estacionamento gratuito na rua em frente à loja</li>
-                    <li><strong>A pé:</strong> 3 quadras da Praça Central</li>
-                </ul>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Pontos de Referência</h4>
+                                    <ul class="card-text">
+                                        <li>Em frente ao Banco do Brasil</li>
+                                        <li>Ao lado da Farmácia Popular</li>
+                                        <li>Próximo à Igreja do Centro</li>
+                                    </ul>
 
-                <h4>Pontos de Referência</h4>
-                <ul>
-                    <li>Em frente ao Banco do Brasil</li>
-                    <li>Ao lado da Farmácia Popular</li>
-                    <li>Próximo à Igreja do Centro</li>
-                </ul>
-            </article>
-        </section>
+                                    <h5>Prazos de Resposta</h5>
+                                    <ul>
+                                        <li><strong>WhatsApp:</strong> Resposta imediata durante horário comercial</li>
+                                        <li><strong>Telefone:</strong> Atendimento direto durante horário comercial</li>
+                                        <li><strong>E-mail:</strong> Resposta em até 24 horas</li>
+                                        <li><strong>Formulário:</strong> Resposta em até 48 horas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <section>
-            <h2>Política de Atendimento</h2>
-
-            <article>
-                <h3>Nosso Compromisso</h3>
-                <p>
-                    No Minimercado Bom Preço, nos comprometemos a responder todos os contatos
-                    recebidos no menor prazo possível. Seu feedback é muito importante para
-                    melhorarmos continuamente nossos produtos e serviços.
-                </p>
-            </article>
-
-            <article>
-                <h3>Prazos de Resposta</h3>
-                <ul>
-                    <li><strong>WhatsApp:</strong> Resposta imediata durante horário comercial</li>
-                    <li><strong>Telefone:</strong> Atendimento direto durante horário comercial</li>
-                    <li><strong>E-mail:</strong> Resposta em até 24 horas</li>
-                    <li><strong>Formulário:</strong> Resposta em até 48 horas</li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>Privacidade</h3>
-                <p>
-                    Todas as informações fornecidas são tratadas com total confidencialidade
-                    e utilizadas exclusivamente para o atendimento de sua solicitação,
-                    conforme nossa política de privacidade.
-                </p>
-            </article>
-        </section>
+                    <div class="alert alert-info mt-4">
+                        <h5 class="alert-heading">🔒 Privacidade e Compromisso</h5>
+                        <p class="mb-0">
+                            No Minimercado Bom Preço, nos comprometemos a responder todos os contatos
+                            recebidos no menor prazo possível. Todas as informações fornecidas são tratadas 
+                            com total confidencialidade e utilizadas exclusivamente para o atendimento de 
+                            sua solicitação, conforme nossa política de privacidade.
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
