@@ -222,8 +222,8 @@ summary {
    LEITORES DE TELA - ARIA SUPPORT
    =========================================== */
 
-/* Elementos com ARIA labels específicos */
-[aria-label]:empty::before {
+/* Elementos com ARIA labels específicos (exceto botões do carrossel) */
+[aria-label]:empty:not(.indicator)::before {
   content: attr(aria-label);
   font-style: italic;
   color: #666;
