@@ -11,26 +11,26 @@
   --accent-color: #8fbc8f;       /* Verde claro */
   --warning-color: #ff6b6b;      /* Vermelho */
   --success-color: #51cf66;      /* Verde sucesso */
-  
+
   /* Cores neutras */
   --dark-color: #2d3436;
   --light-color: #ddd;
   --white-color: #ffffff;
   --gray-color: #636e72;
-  
+
   /* Tipografia */
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-size-base: 16px;
   --font-size-large: 18px;
   --font-size-small: 14px;
-  
+
   /* Espaçamentos */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
-  
+
   /* Bordas e sombras */
   --border-radius: 8px;
   --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -100,7 +100,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-bottom: var(--spacing-sm);
   text-align: justify;
-  text-indent: 1em;
 }
 
 /* Destaque em produtos */
@@ -275,16 +274,16 @@ footer a:hover {
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
   }
-  
+
   header h1 {
     font-size: 2rem;
   }
-  
+
   nav ul {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .container-custom {
     padding: var(--spacing-sm);
   }
@@ -297,15 +296,15 @@ footer a:hover {
     --spacing-sm: 0.75rem;
     --spacing-md: 0.75rem;
   }
-  
+
   header h1 {
     font-size: 1.75rem;
   }
-  
+
   .product-card {
     padding: var(--spacing-sm);
   }
-  
+
   .product-card img {
     height: 150px;
   }

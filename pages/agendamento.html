@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento de Serviços - Minimercado Bom Preço</title>
     <meta name="description" content="Agende sua retirada no local ou tele-entrega do Minimercado Bom Preço. Escolha data e horário de sua preferência.">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- CSS Customizado -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
@@ -25,7 +25,7 @@
         <div class="container">
             <h1>Minimercado Bom Preço</h1>
             <p>Qualidade e Economia para sua Família</p>
-            
+
             <nav id="navigation" role="navigation" aria-label="Navegação principal">
                 <ul>
                     <li><a href="../index.html">Início</a></li>
@@ -66,18 +66,18 @@
                                                 <li>✅ Escolha pessoal dos produtos</li>
                                                 <li>✅ Horário: 07:00 às 20:00</li>
                                             </ul>
-                                            <button class="btn btn-outline-primary btn-select-service" 
+                                            <button class="btn btn-outline-primary btn-select-service"
                                                     data-servico="retirada"
                                                     aria-describedby="desc-retirada">
-                                                Selecionar Retirada
+Selecionar Retirada
                                             </button>
                                             <div id="desc-retirada" class="sr-only">
-                                                Serviço gratuito onde você vem até nossa loja para retirar os produtos
+Serviço gratuito onde você vem até nossa loja para retirar os produtos
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="card h-100 servico-card" data-servico="entrega">
                                         <div class="card-body text-center">
@@ -89,13 +89,13 @@
                                                 <li>✅ Comodidade total</li>
                                                 <li>✅ Horário: 08:00 às 19:00</li>
                                             </ul>
-                                            <button class="btn btn-outline-success btn-select-service" 
+                                            <button class="btn btn-outline-success btn-select-service"
                                                     data-servico="entrega"
                                                     aria-describedby="desc-entrega">
-                                                Selecionar Entrega
+Selecionar Entrega
                                             </button>
                                             <div id="desc-entrega" class="sr-only">
-                                                Serviço de entrega em domicílio com taxa de R$ 5,00, gratuito para compras acima de R$ 50
+Serviço de entrega em domicílio com taxa de R$ 5,00, gratuito para compras acima de R$ 50
                                             </div>
                                         </div>
                                     </div>
@@ -117,27 +117,27 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="cliente-nome" class="form-label required">Nome Completo:</label>
-                                            <input type="text" 
-                                                   class="form-control" 
-                                                   id="cliente-nome" 
-                                                   name="nome" 
-                                                   required 
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="cliente-nome"
+                                                   name="nome"
+                                                   required
                                                    placeholder="Seu nome completo">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="cliente-telefone" class="form-label required">Telefone:</label>
-                                            <input type="tel" 
-                                                   class="form-control" 
-                                                   id="cliente-telefone" 
-                                                   name="telefone" 
-                                                   required 
+                                            <input type="tel"
+                                                   class="form-control"
+                                                   id="cliente-telefone"
+                                                   name="telefone"
+                                                   required
                                                    placeholder="(11) 99999-9999">
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Endereço para entrega -->
                                 <div id="endereco-entrega" style="display: none;" aria-live="polite">
                                     <hr>
@@ -147,30 +147,30 @@
                                         <div class="col-md-3">
                                             <div class="mb-3">
                                                 <label for="entrega-cep" class="form-label">CEP:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-cep" 
-                                                       name="cep" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-cep"
+                                                       name="cep"
                                                        placeholder="00000-000">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="entrega-rua" class="form-label">Rua:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-rua" 
-                                                       name="rua" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-rua"
+                                                       name="rua"
                                                        placeholder="Nome da rua">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="mb-3">
                                                 <label for="entrega-numero" class="form-label">Número:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-numero" 
-                                                       name="numero" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-numero"
+                                                       name="numero"
                                                        placeholder="123">
                                             </div>
                                         </div>
@@ -179,30 +179,30 @@
                                         <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label for="entrega-complemento" class="form-label">Complemento:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-complemento" 
-                                                       name="complemento" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-complemento"
+                                                       name="complemento"
                                                        placeholder="Apto, bloco, etc.">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label for="entrega-bairro" class="form-label">Bairro:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-bairro" 
-                                                       name="bairro" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-bairro"
+                                                       name="bairro"
                                                        placeholder="Nome do bairro">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label for="entrega-cidade" class="form-label">Cidade:</label>
-                                                <input type="text" 
-                                                       class="form-control" 
-                                                       id="entrega-cidade" 
-                                                       name="cidade" 
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="entrega-cidade"
+                                                       name="cidade"
                                                        placeholder="Nome da cidade">
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                     </table>
                                 </div>
                             </div>
-                            
+
                             <!-- Widget de calendário -->
                             <div id="calendario-agendamento" role="application" aria-label="Calendário de agendamento">
                                 <!-- Conteúdo gerado dinamicamente -->
@@ -292,7 +292,7 @@
                                 <h4 class="alert-heading">Revise os dados do seu agendamento</h4>
                                 <p class="mb-0">Confira se todas as informações estão corretas antes de confirmar.</p>
                             </div>
-                            
+
                             <!-- Tabela de resumo -->
                             <div class="table-responsive">
                                 <table class="table table-hover">
@@ -334,10 +334,10 @@
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                                 <button type="button" class="btn btn-outline-secondary me-md-2" onclick="voltarEtapa()">
-                                    ← Voltar
+← Voltar
                                 </button>
                                 <button type="button" class="btn btn-success btn-lg" onclick="confirmarAgendamentoFinal()">
                                     ✅ Confirmar Agendamento
@@ -360,12 +360,12 @@
                                 <hr>
                                 <p class="mb-0">Você receberá uma confirmação por WhatsApp ou telefone em breve.</p>
                             </div>
-                            
+
                             <div class="mb-4">
                                 <h5>Número do Agendamento</h5>
                                 <div class="display-6 text-primary" id="numero-agendamento">-</div>
                             </div>
-                            
+
                             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                                 <a href="../index.html" class="btn btn-primary">Voltar ao Início</a>
                                 <a href="produtos.html" class="btn btn-outline-primary">Ver Produtos</a>
@@ -412,10 +412,10 @@
                     CNPJ: 12.345.678/0001-90<br>
                     Inscrição Municipal: 123456789
                 </p>
-                
+
                 <p>
                     <small>
-                        © 2024 Minimercado Bom Preço. Todos os direitos reservados.<br>
+                        © 2025 Minimercado Bom Preço. Todos os direitos reservados.<br>
                         Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
                     </small>
                 </p>
@@ -425,68 +425,68 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- JavaScript Customizado -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/forms.js"></script>
     <script src="../assets/js/calendar.js"></script>
     <script src="../assets/js/accessibility.js"></script>
-    
+
     <!-- Estilos específicos da página -->
     <style>
         .servico-card {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .servico-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        
+
         .servico-card:focus-within {
             outline: 3px solid var(--primary-color, #2c5530);
             outline-offset: 2px;
         }
-        
+
         .border-3 {
             border-width: 3px !important;
         }
-        
+
         .opacity-50 {
             opacity: 0.5;
             pointer-events: none;
         }
-        
+
         [aria-disabled="true"] {
             cursor: not-allowed;
         }
-        
+
         [aria-disabled="true"] * {
             pointer-events: none;
         }
-        
+
         .badge {
             font-size: 0.75rem;
         }
-        
+
         /* Melhorar indicadores visuais */
         .card-header .badge {
             font-weight: 500;
         }
-        
+
         /* Animação suave para transições de estado */
         .card {
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+
         /* Melhor feedback visual para seleção */
         .btn-select-service:focus {
             outline: 2px solid currentColor;
             outline-offset: 2px;
         }
     </style>
-    
+
     <script>
         // JavaScript específico da página de agendamento
         let dadosAgendamento = {
@@ -495,45 +495,45 @@
             data: null,
             horario: null
         };
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Página de agendamento carregada');
-            
+
             // Event listeners para seleção de serviço
             document.querySelectorAll('.btn-select-service').forEach(btn => {
                 btn.addEventListener('click', function() {
                     selecionarServico(this.dataset.servico);
                 });
             });
-            
+
             // Event listener para formulário de cliente
             document.getElementById('form-info-cliente').addEventListener('input', function() {
                 atualizarDadosCliente();
             });
         });
-        
+
         function selecionarServico(tipoServico) {
             dadosAgendamento.servico = tipoServico;
-            
+
             // Atualizar visual dos cards
             document.querySelectorAll('.servico-card').forEach(card => {
                 card.classList.remove('border-primary', 'border-success', 'border-3');
             });
-            
+
             const cardSelecionado = document.querySelector(`[data-servico="${tipoServico}"]`);
             cardSelecionado.classList.add(
                 tipoServico === 'retirada' ? 'border-primary' : 'border-success',
                 'border-3'
             );
-            
+
             // Mostrar/esconder endereço com feedback acessível
             const enderecoDiv = document.getElementById('endereco-entrega');
             const liveRegion = document.getElementById('live-region') || document.createElement('div');
-            
+
             if (tipoServico === 'entrega') {
                 enderecoDiv.style.display = 'block';
                 enderecoDiv.setAttribute('aria-expanded', 'true');
-                
+
                 // Tornar campos obrigatórios
                 enderecoDiv.querySelectorAll('input').forEach(input => {
                     if (['cep', 'rua', 'numero', 'bairro', 'cidade'].includes(input.name)) {
@@ -541,7 +541,7 @@
                         input.setAttribute('aria-required', 'true');
                     }
                 });
-                
+
                 // Anunciar para leitores de tela
                 if (liveRegion.id === 'live-region') {
                     liveRegion.textContent = 'Serviço de entrega selecionado. Campos de endereço agora são obrigatórios.';
@@ -549,31 +549,31 @@
             } else {
                 enderecoDiv.style.display = 'none';
                 enderecoDiv.setAttribute('aria-expanded', 'false');
-                
+
                 // Remover obrigatoriedade dos campos
                 enderecoDiv.querySelectorAll('input').forEach(input => {
                     input.required = false;
                     input.removeAttribute('aria-required');
                     input.value = ''; // Limpar valores
                 });
-                
+
                 // Anunciar para leitores de tela
                 if (liveRegion.id === 'live-region') {
                     liveRegion.textContent = 'Serviço de retirada selecionado. Campos de endereço não são necessários.';
                 }
             }
-            
+
             // Focar no primeiro campo obrigatório não preenchido
             const primeiroVazio = document.querySelector('#info-cliente input[required]:not([value]), #info-cliente input[required][value=""]');
             if (primeiroVazio) {
                 setTimeout(() => primeiroVazio.focus(), 100);
             }
         }
-        
+
         function atualizarDadosCliente() {
             const form = document.getElementById('form-info-cliente');
             const formData = new FormData(form);
-            
+
             dadosAgendamento.cliente = {
                 nome: formData.get('nome'),
                 telefone: formData.get('telefone'),
@@ -586,23 +586,23 @@
                     cidade: formData.get('cidade')
                 }
             };
-            
+
             // Validar campos obrigatórios baseado no tipo de serviço
             let camposValidos = dadosAgendamento.cliente.nome && dadosAgendamento.cliente.telefone;
-            
+
             if (dadosAgendamento.servico === 'entrega') {
-                camposValidos = camposValidos && 
+                camposValidos = camposValidos &&
                                dadosAgendamento.cliente.endereco.cep &&
                                dadosAgendamento.cliente.endereco.rua &&
                                dadosAgendamento.cliente.endereco.numero &&
                                dadosAgendamento.cliente.endereco.bairro &&
                                dadosAgendamento.cliente.endereco.cidade;
             }
-            
+
             // Atualizar indicador visual de progresso
             const calendarioSection = document.getElementById('secao-calendario');
             const calendarioHeader = calendarioSection.querySelector('.card-header h3');
-            
+
             if (camposValidos) {
                 calendarioHeader.innerHTML = '3. Escolha Data e Horário <span class="badge bg-success ms-2">Pronto para seleção</span>';
                 calendarioSection.classList.remove('opacity-50');
@@ -613,31 +613,31 @@
                 calendarioSection.setAttribute('aria-disabled', 'true');
             }
         }
-        
+
         function confirmarAgendamentoFinal() {
             // Gerar número do agendamento
             const numeroAgendamento = 'AG' + Date.now().toString().substr(-8);
-            
+
             // Salvar no localStorage
             const agendamento = {
                 numero: numeroAgendamento,
                 ...dadosAgendamento,
                 timestamp: new Date().toISOString()
             };
-            
+
             localStorage.setItem('ultimo_agendamento', JSON.stringify(agendamento));
-            
+
             // Mostrar confirmação
             document.getElementById('numero-agendamento').textContent = numeroAgendamento;
             document.getElementById('agendamento-confirmado').style.display = 'block';
             document.getElementById('resumo-agendamento').style.display = 'none';
-            
+
             document.getElementById('agendamento-confirmado').scrollIntoView({ behavior: 'smooth' });
         }
-        
+
         function voltarEtapa() {
             document.getElementById('resumo-agendamento').style.display = 'none';
-            
+
             // Focar no calendário para melhor acessibilidade
             const calendario = document.getElementById('calendario-agendamento');
             if (calendario) {
@@ -645,31 +645,31 @@
                 calendario.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
-        
+
         function novoAgendamento() {
             location.reload();
         }
-        
+
         // Callback para quando data/horário for selecionado no calendário
         window.onAgendamentoSelecionado = function(data, horario) {
             dadosAgendamento.data = data;
             dadosAgendamento.horario = horario;
-            
+
             // Atualizar resumo
             atualizarResumo();
-            
+
             // Mostrar resumo
             document.getElementById('resumo-agendamento').style.display = 'block';
             document.getElementById('resumo-agendamento').scrollIntoView({ behavior: 'smooth' });
         };
-        
+
         function atualizarResumo() {
-            document.getElementById('resumo-servico').textContent = 
+            document.getElementById('resumo-servico').textContent =
                 dadosAgendamento.servico === 'retirada' ? 'Retirada no Local' : 'Tele-entrega';
-            
+
             document.getElementById('resumo-cliente').textContent = dadosAgendamento.cliente.nome;
             document.getElementById('resumo-telefone').textContent = dadosAgendamento.cliente.telefone;
-            
+
             if (dadosAgendamento.servico === 'entrega') {
                 const endereco = dadosAgendamento.cliente.endereco;
                 const enderecoFormatado = `${endereco.rua}, ${endereco.numero}${endereco.complemento ? ' - ' + endereco.complemento : ''}, ${endereco.bairro}, ${endereco.cidade}`;
@@ -680,9 +680,9 @@
                 document.getElementById('linha-endereco').style.display = 'none';
                 document.getElementById('resumo-taxa').textContent = 'R$ 0,00';
             }
-            
+
             if (dadosAgendamento.data) {
-                document.getElementById('resumo-data').textContent = 
+                document.getElementById('resumo-data').textContent =
                     dadosAgendamento.data.toLocaleDateString('pt-BR', {
                         weekday: 'long',
                         year: 'numeric',
@@ -690,7 +690,7 @@
                         day: 'numeric'
                     });
             }
-            
+
             document.getElementById('resumo-horario').textContent = dadosAgendamento.horario || '-';
         }
     </script>
