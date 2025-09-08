@@ -1,0 +1,374 @@
+/* ============================================
+   CSS CUSTOMIZADO - MINIMERCADO BOM PREÇO
+   ESTILOS PRINCIPAIS DO SITE
+   ============================================ */
+
+/* Variáveis CSS para consistência */
+:root {
+  /* Paleta de cores */
+  --primary-color: #2c5530;      /* Verde escuro */
+  --secondary-color: #4a7c59;    /* Verde médio */
+  --accent-color: #8fbc8f;       /* Verde claro */
+  --warning-color: #ff6b6b;      /* Vermelho */
+  --success-color: #51cf66;      /* Verde sucesso */
+  
+  /* Cores neutras */
+  --dark-color: #2d3436;
+  --light-color: #ddd;
+  --white-color: #ffffff;
+  --gray-color: #636e72;
+  
+  /* Tipografia */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-small: 14px;
+  
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Bordas e sombras */
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset e configurações base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f8f9fa;
+}
+
+/* Estados de interação */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--accent-color);
+}
+
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Efeitos visuais com pseudo-elementos */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  text-align: justify;
+  text-indent: 1em;
+}
+
+/* Destaque em produtos */
+.product-list .product-item:first-child {
+  border-top: 3px solid var(--primary-color);
+}
+
+.product-list .product-item:last-child {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* Layout e estrutura */
+
+/* Container principal */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white-color);
+  padding: var(--spacing-md) 0;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+header h1 {
+  color: var(--white-color);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+header p {
+  text-align: center;
+  opacity: 0.9;
+  font-size: var(--font-size-large);
+}
+
+/* Navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+nav a {
+  color: var(--white-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+}
+
+nav a:hover {
+  background-color: rgba(255,255,255,0.2);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+  padding: var(--spacing-xl) 0;
+  min-height: 60vh;
+}
+
+/* Cards de produtos */
+.product-card {
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-card h3 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Imagens */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Preços */
+.price {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  color: var(--warning-color);
+  background: linear-gradient(90deg, var(--warning-color), #ff8787);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Botões */
+.btn-custom {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white-color);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  margin-top: auto;
+}
+
+footer h2 {
+  color: var(--accent-color);
+  font-size: var(--font-size-large);
+  margin-bottom: var(--spacing-sm);
+}
+
+footer a {
+  color: var(--light-color);
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* ===========================================
+   RESPONSIVIDADE - MEDIA QUERIES
+   =========================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container-custom {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 13px;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 0.75rem;
+  }
+  
+  header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .product-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .product-card img {
+    height: 150px;
+  }
+}
+
+/* ===========================================
+   ANIMAÇÕES E TRANSIÇÕES
+   =========================================== */
+
+/* Animação de fade-in para elementos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Animação de destaque */
+@keyframes highlight {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(143, 188, 143, 0.3); }
+  100% { background-color: transparent; }
+}
+
+.highlight-animation {
+  animation: highlight 2s ease-in-out;
+}
+
+/* ===========================================
+   UTILIDADES
+   =========================================== */
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+
+/* Classes para acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-visible:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}

@@ -1,0 +1,404 @@
+/* ============================================
+   RECURSOS DE ACESSIBILIDADE
+   SUPORTE A TECNOLOGIAS ASSISTIVAS
+   ============================================ */
+
+/* Configurações base */
+
+/* Reset para elementos focáveis */
+*:focus {
+  outline: 2px solid var(--primary-color, #2c5530);
+  outline-offset: 2px;
+}
+
+/* Conteúdo apenas para leitores de tela */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Links de navegação rápida */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color, #2c5530);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Correção de problemas comuns */
+
+/* Verificação de imagens sem alt */
+img:not([alt]) {
+  border: 3px solid red;
+}
+
+img:not([alt])::after {
+  content: "ALT MISSING";
+  background: red;
+  color: white;
+  padding: 2px;
+  position: absolute;
+  font-size: 12px;
+}
+
+/* Links que parecem botões devem ter role apropriado */
+a.btn, a.button {
+  role: button;
+}
+
+/* Botões que são links devem ter href */
+button[href] {
+  border: 2px solid orange;
+}
+
+/* Tecnologias assistivas */
+
+/* Melhor contraste para leitores de tela */
+.high-contrast {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast button {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Indicadores visuais para elementos focados */
+.focus-indicator:focus,
+.focus-indicator:focus-within {
+  outline: 3px solid var(--primary-color, #2c5530);
+  outline-offset: 2px;
+  background-color: rgba(44, 85, 48, 0.1);
+}
+
+/* ===========================================
+   NAVEGAÇÃO POR TECLADO
+   =========================================== */
+
+/* Melhorar visibilidade do foco */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--primary-color, #2c5530);
+  outline-offset: 2px;
+  background-color: rgba(44, 85, 48, 0.05);
+}
+
+/* Elementos interativos devem ter cursor pointer */
+button,
+[role="button"],
+[tabindex="0"],
+summary {
+  cursor: pointer;
+}
+
+/* Tabindex negativo para elementos não focáveis por teclado */
+[tabindex="-1"] {
+  outline: none;
+}
+
+/* ===========================================
+   TAMANHOS DE FONTE AJUSTÁVEIS
+   =========================================== */
+
+/* Classes para diferentes tamanhos de fonte */
+.font-size-normal {
+  font-size: 1rem;
+}
+
+.font-size-large {
+  font-size: 1.25rem;
+}
+
+.font-size-larger {
+  font-size: 1.5rem;
+}
+
+.font-size-x-large {
+  font-size: 2rem;
+}
+
+/* Controles de acessibilidade */
+.accessibility-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: 2px solid var(--primary-color, #2c5530);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.accessibility-controls button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.accessibility-controls button:hover,
+.accessibility-controls button:focus {
+  background: var(--primary-color, #2c5530);
+  color: white;
+}
+
+/* ===========================================
+   MODO ALTO CONTRASTE
+   =========================================== */
+
+/* Ativado via JavaScript ou preferência do sistema */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #666666;
+    --white-color: #ffffff;
+    --dark-color: #000000;
+    --light-color: #cccccc;
+  }
+}
+
+.high-contrast-mode {
+  --primary-color: #000000 !important;
+  --secondary-color: #333333 !important;
+  --accent-color: #666666 !important;
+  --white-color: #ffffff !important;
+  --dark-color: #000000 !important;
+  --light-color: #cccccc !important;
+}
+
+.high-contrast-mode body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast-mode .product-card {
+  border: 2px solid #000000 !important;
+  background: #ffffff !important;
+}
+
+.high-contrast-mode a {
+  color: #0000ff !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-mode a:visited {
+  color: #800080 !important;
+}
+
+/* ===========================================
+   LEITORES DE TELA - ARIA SUPPORT
+   =========================================== */
+
+/* Elementos com ARIA labels específicos */
+[aria-label]:empty::before {
+  content: attr(aria-label);
+  font-style: italic;
+  color: #666;
+}
+
+/* Live regions para atualizações dinâmicas */
+.live-region {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Estados ARIA visuais */
+[aria-expanded="true"] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+[aria-selected="true"] {
+  background-color: var(--primary-color, #2c5530);
+  color: white;
+}
+
+[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===========================================
+   VALIDAÇÃO W3C E ACCESSMONITOR
+   =========================================== */
+
+/* Indicadores para elementos que precisam de validação */
+.needs-validation:invalid {
+  border: 2px solid #ff6b6b;
+}
+
+.needs-validation:valid {
+  border: 2px solid #51cf66;
+}
+
+/* Mensagens de erro acessíveis */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.error-message::before {
+  content: "⚠ ";
+  font-weight: bold;
+}
+
+/* Sucesso */
+.success-message {
+  color: #51cf66;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.success-message::before {
+  content: "✓ ";
+  font-weight: bold;
+}
+
+/* ===========================================
+   PRINT ACCESSIBILITY
+   =========================================== */
+
+@media print {
+  .accessibility-controls {
+    display: none;
+  }
+  
+  .skip-link {
+    display: none;
+  }
+  
+  /* Garantir contraste adequado na impressão */
+  * {
+    color: black !important;
+    background: white !important;
+  }
+  
+  a:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* ===========================================
+   REDUCED MOTION PARA USUÁRIOS SENSÍVEIS
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================
+   DARK MODE SUPPORT
+   =========================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #4a7c59;
+    --secondary-color: #8fbc8f;
+    --accent-color: #a8d8a8;
+    --dark-color: #ffffff;
+    --light-color: #cccccc;
+    --white-color: #1a1a1a;
+  }
+  
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .product-card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+}
+
+/* ===========================================
+   UTILITIES PARA ACESSIBILIDADE
+   =========================================== */
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.focusable:focus,
+.focusable:active {
+  position: static !important;
+  overflow: visible !important;
+  clip: auto !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Indicadores de obrigatoriedade */
+.required::after {
+  content: " *";
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Descrições de campos */
+.field-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}

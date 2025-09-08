@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Cliente - Minimercado Bom Preço</title>
+    <meta name="description" content="Cadastre-se no Minimercado Bom Preço e aproveite ofertas exclusivas, agendamento de entregas e muito mais.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/accessibility.css">
+</head>
+<body>
+    <!-- Skip Links para Acessibilidade -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+        <a href="#navigation" class="skip-link">Pular para navegação</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>Minimercado Bom Preço</h1>
+            <p>Qualidade e Economia para sua Família</p>
+            
+            <nav id="navigation" role="navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <header class="text-center mb-5">
+                    <h2>Cadastro do Cliente</h2>
+                    <p class="lead">Cadastre-se para aproveitar ofertas exclusivas e agendar entregas</p>
+                </header>
+
+                <!-- Formulário de cadastro -->
+                <form id="form-cadastro" method="post" action="#" novalidate class="needs-validation">
+                    
+                    <!-- Dados pessoais -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">Dados Pessoais</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group mb-3">
+                                    <label for="nome" class="form-label required">Nome Completo:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="nome" 
+                                           name="nome" 
+                                           required 
+                                           placeholder="Digite seu nome completo"
+                                           maxlength="100"
+                                           aria-describedby="nome-help">
+                                    <div id="nome-help" class="form-text">Insira seu nome completo como consta nos documentos</div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="data-nascimento" class="form-label required">Data de Nascimento:</label>
+                                    <input type="date" 
+                                           class="form-control" 
+                                           id="data-nascimento" 
+                                           name="data-nascimento" 
+                                           required
+                                           max="2006-01-01">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="cpf" class="form-label required">CPF:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="cpf" 
+                                           name="cpf" 
+                                           required 
+                                           placeholder="000.000.000-00"
+                                           maxlength="14"
+                                           pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <!-- Seleção de gênero -->
+                                <fieldset class="form-group mb-3">
+                                    <legend class="form-label">Sexo:</legend>
+                                    <div class="d-flex gap-3 flex-wrap">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="radio" 
+                                                   name="sexo" 
+                                                   id="sexo-m" 
+                                                   value="masculino">
+                                            <label class="form-check-label" for="sexo-m">Masculino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="radio" 
+                                                   name="sexo" 
+                                                   id="sexo-f" 
+                                                   value="feminino">
+                                            <label class="form-check-label" for="sexo-f">Feminino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="radio" 
+                                                   name="sexo" 
+                                                   id="sexo-o" 
+                                                   value="outro">
+                                            <label class="form-check-label" for="sexo-o">Outro</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="radio" 
+                                                   name="sexo" 
+                                                   id="sexo-n" 
+                                                   value="nao-informar" 
+                                                   checked>
+                                            <label class="form-check-label" for="sexo-n">Prefiro não informar</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Informações de contato -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">Informações de Contato</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="email" class="form-label required">E-mail:</label>
+                                    <input type="email" 
+                                           class="form-control" 
+                                           id="email" 
+                                           name="email" 
+                                           required 
+                                           placeholder="seu@email.com"
+                                           maxlength="100">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="telefone" class="form-label required">Telefone:</label>
+                                    <input type="tel" 
+                                           class="form-control" 
+                                           id="telefone" 
+                                           name="telefone" 
+                                           required 
+                                           placeholder="(11) 99999-9999"
+                                           maxlength="15">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Preferências de contato -->
+                        <fieldset class="form-group mb-3">
+                            <legend class="form-label">Preferências de Contato:</legend>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="contato-email" 
+                                               name="preferencias-contato[]" 
+                                               value="email" 
+                                               checked>
+                                        <label class="form-check-label" for="contato-email">E-mail</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="contato-sms" 
+                                               name="preferencias-contato[]" 
+                                               value="sms">
+                                        <label class="form-check-label" for="contato-sms">SMS</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="contato-whatsapp" 
+                                               name="preferencias-contato[]" 
+                                               value="whatsapp">
+                                        <label class="form-check-label" for="contato-whatsapp">WhatsApp</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="contato-telefone" 
+                                               name="preferencias-contato[]" 
+                                               value="telefone">
+                                        <label class="form-check-label" for="contato-telefone">Telefone</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+
+                    <!-- Endereço -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">Endereço</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group mb-3">
+                                    <label for="cep" class="form-label required">CEP:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="cep" 
+                                           name="cep" 
+                                           required 
+                                           placeholder="00000-000"
+                                           maxlength="9">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-7">
+                                <div class="form-group mb-3">
+                                    <label for="rua" class="form-label required">Rua/Logradouro:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="rua" 
+                                           name="rua" 
+                                           required 
+                                           placeholder="Nome da rua"
+                                           maxlength="200">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label for="numero" class="form-label required">Número:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="numero" 
+                                           name="numero" 
+                                           required 
+                                           placeholder="123"
+                                           maxlength="10">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="complemento" class="form-label">Complemento:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="complemento" 
+                                           name="complemento" 
+                                           placeholder="Apto, bloco, etc."
+                                           maxlength="50">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="bairro" class="form-label required">Bairro:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="bairro" 
+                                           name="bairro" 
+                                           required 
+                                           placeholder="Nome do bairro"
+                                           maxlength="100">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="cidade" class="form-label required">Cidade:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="cidade" 
+                                           name="cidade" 
+                                           required 
+                                           placeholder="Nome da cidade"
+                                           maxlength="100">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Seleção de estado -->
+                                <div class="form-group mb-3">
+                                    <label for="estado" class="form-label required">Estado:</label>
+                                    <select class="form-select" id="estado" name="estado" required>
+                                        <option value="">Selecione o estado</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS" selected>Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferências e interesses -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">Preferências e Interesses</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="profissao" class="form-label">Profissão:</label>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="profissao" 
+                                           name="profissao" 
+                                           placeholder="Sua profissão"
+                                           maxlength="100">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <!-- Controle de frequência -->
+                                <div class="form-group mb-3">
+                                    <label for="frequencia-compras" class="form-label">Frequência de Compras (por mês):</label>
+                                    <input type="range" 
+                                           class="form-range" 
+                                           id="frequencia-compras" 
+                                           name="frequencia-compras" 
+                                           min="1" 
+                                           max="30" 
+                                           value="4" 
+                                           oninput="document.getElementById('freq-value').textContent = this.value">
+                                    <div class="d-flex justify-content-between">
+                                        <small>1x</small>
+                                        <span id="freq-value" class="badge bg-primary">4</span>
+                                        <small>30x</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Categorias de interesse -->
+                        <fieldset class="form-group mb-3">
+                            <legend class="form-label">Categorias de Interesse:</legend>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="interesse-frutas" 
+                                               name="categorias-interesse[]" 
+                                               value="frutas-verduras">
+                                        <label class="form-check-label" for="interesse-frutas">Frutas e Verduras</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="interesse-alimenticios" 
+                                               name="categorias-interesse[]" 
+                                               value="alimenticios">
+                                        <label class="form-check-label" for="interesse-alimenticios">Produtos Alimentícios</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="interesse-higiene" 
+                                               name="categorias-interesse[]" 
+                                               value="higiene-limpeza">
+                                        <label class="form-check-label" for="interesse-higiene">Higiene e Limpeza</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <!-- Comentários adicionais -->
+                        <div class="form-group mb-3">
+                            <label for="observacoes" class="form-label">Observações ou Comentários:</label>
+                            <textarea class="form-control" 
+                                      id="observacoes" 
+                                      name="observacoes" 
+                                      rows="4" 
+                                      placeholder="Alguma observação especial, restrições alimentares, etc."
+                                      maxlength="500"></textarea>
+                            <div class="form-text">Máximo 500 caracteres</div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Finalização -->
+                    <fieldset class="border p-4 mb-4 rounded">
+                        <legend class="h4 text-primary">Finalização</legend>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="termos" 
+                                       name="termos" 
+                                       required>
+                                <label class="form-check-label required" for="termos">
+                                    Concordo com os <a href="#" target="_blank">Termos de Uso</a> e <a href="#" target="_blank">Política de Privacidade</a>
+                                </label>
+                                <div class="invalid-feedback">Você deve aceitar os termos para continuar</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="newsletter" 
+                                       name="newsletter" 
+                                       checked>
+                                <label class="form-check-label" for="newsletter">
+                                    Desejo receber ofertas especiais e novidades por e-mail
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Barra de progresso -->
+                        <div class="form-group mb-4">
+                            <label for="progresso-cadastro" class="form-label">Progresso do Cadastro:</label>
+                            <div class="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div id="progresso-cadastro" class="progress-bar bg-success" style="width: 100%">100% Completo</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ações do formulário -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="reset" class="btn btn-outline-secondary me-md-2">
+                                🔄 Limpar Formulário
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                ✅ Finalizar Cadastro
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <!-- Resumo dos dados -->
+                <section class="mt-5" id="resumo-cadastro" style="display: none;">
+                    <h3>Resumo do Cadastro</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Campo</th>
+                                    <th scope="col">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-resumo">
+                                <!-- Preenchido dinamicamente -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-success">
+                                    <th scope="row">Status</th>
+                                    <td><span class="badge bg-success">Cadastro Completo</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <section>
+                <h2>Contato</h2>
+                <p>
+                    <strong>Telefone:</strong> (51) 3333-4444<br>
+                    <strong>WhatsApp:</strong> (51) 99999-8888<br>
+                    <strong>E-mail:</strong> contato@minimercadobompreco.com.br
+                </p>
+            </section>
+
+            <section>
+                <h2>Navegação</h2>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Informações Legais</h2>
+                <p>
+                    <strong>Minimercado Bom Preço Ltda.</strong><br>
+                    CNPJ: 12.345.678/0001-90<br>
+                    Inscrição Municipal: 123456789
+                </p>
+                
+                <p>
+                    <small>
+                        © 2024 Minimercado Bom Preço. Todos os direitos reservados.<br>
+                        Site desenvolvido como projeto acadêmico - Fundamentos de Sistemas Web - PUCRS
+                    </small>
+                </p>
+            </section>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Customizado -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/forms.js"></script>
+    <script src="../assets/js/accessibility.js"></script>
+    
+    <script>
+        // JavaScript específico da página de cadastro
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página de cadastro carregada');
+            
+            // Atualizar progresso do formulário
+            const campos = document.querySelectorAll('#form-cadastro input, #form-cadastro select, #form-cadastro textarea');
+            const progressBar = document.getElementById('progresso-cadastro');
+            
+            function atualizarProgresso() {
+                const camposPreenchidos = Array.from(campos).filter(campo => {
+                    if (campo.type === 'checkbox' || campo.type === 'radio') {
+                        return campo.checked;
+                    }
+                    return campo.value.trim() !== '';
+                }).length;
+                
+                const porcentagem = Math.round((camposPreenchidos / campos.length) * 100);
+                progressBar.style.width = porcentagem + '%';
+                progressBar.textContent = porcentagem + '% Completo';
+                progressBar.setAttribute('aria-valuenow', porcentagem);
+                
+                if (porcentagem < 50) {
+                    progressBar.className = 'progress-bar bg-danger';
+                } else if (porcentagem < 80) {
+                    progressBar.className = 'progress-bar bg-warning';
+                } else {
+                    progressBar.className = 'progress-bar bg-success';
+                }
+            }
+            
+            campos.forEach(campo => {
+                campo.addEventListener('input', atualizarProgresso);
+                campo.addEventListener('change', atualizarProgresso);
+            });
+            
+            atualizarProgresso();
+        });
+    </script>
+</body>
+</html>
