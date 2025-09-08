@@ -27,7 +27,7 @@
 
   /* Transparências essenciais */
   --primary-alpha: rgba(44, 85, 48, 0.25);
-  --white-alpha: rgba(255, 255, 255, 0.9);
+  --white-alpha: rgba(255, 255, 255, 0.25);
   --shadow-alpha: rgba(0, 0, 0, 0.1);
 
   /* Tipografia */
@@ -233,6 +233,7 @@ main {
 }
 
 .btn-custom:hover {
+  color: var(--white-color);
   background: var(--primary-color);
 }
 
@@ -282,7 +283,7 @@ header nav a:hover,
 header nav ul li a:hover,
 nav a:hover,
 nav ul li a:hover {
-  color: var(--white-color) !important;
+  color: var(--primary-color) !important;
   background-color: var(--white-alpha) !important;
   text-decoration: none !important;
 }
