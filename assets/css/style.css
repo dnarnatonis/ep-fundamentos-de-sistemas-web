@@ -888,180 +888,6 @@ textarea:disabled {
 }
 
 /* =============================================
-   OVERRIDE PARA CALENDÁRIO - CONTRASTE MÁXIMO
-   ============================================= */
-
-/* CSS do calendário JavaScript com contraste corrigido */
-.calendario-container .dia,
-.calendario-container .dia-disponivel,
-.calendario-container .dia-bloqueado,
-.calendario-container .dia-hoje,
-.calendario-container .dia-selecionado {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-  border: 1px solid var(--border-color) !important;
-}
-
-.calendario-container .dia-semana {
-  color: var(--dark-color) !important;
-  font-weight: 600 !important;
-}
-
-.calendario-container .dia-disponivel:hover {
-  background-color: var(--primary-color) !important;
-  color: var(--white-color) !important;
-}
-
-.calendario-container .dia-selecionado {
-  background-color: var(--primary-color) !important;
-  color: var(--white-color) !important;
-}
-
-.calendario-container .dia-hoje {
-  background-color: var(--primary-color) !important;
-  color: var(--white-color) !important;
-}
-
-.calendario-container .dia-bloqueado {
-  background-color: var(--light-color) !important;
-  color: var(--gray-color) !important;
-}
-
-.calendario-container .btn-horario {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-  border: 1px solid var(--border-color) !important;
-}
-
-.calendario-container .btn-horario:hover {
-  background-color: var(--primary-color) !important;
-  color: var(--white-color) !important;
-}
-
-.calendario-container .btn-horario.selecionado {
-  background-color: var(--primary-color) !important;
-  color: var(--white-color) !important;
-}
-
-/* =============================================
-   FORÇA BRUTA FINAL - CALENDÁRIO SEMPRE LEGÍVEL
-   ============================================= */
-
-/* FORÇAR cores no calendário JavaScript */
-.calendario-container .dia,
-.calendario-container div[class*="dia"],
-[class*="calendario"] .dia,
-[class*="calendario"] div[class*="dia"] {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-}
-
-.calendario-container .dia-semana,
-[class*="calendario"] .dia-semana {
-  color: var(--dark-color) !important;
-}
-
-.calendario-container .dia-disponivel,
-[class*="calendario"] .dia-disponivel {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-}
-
-.calendario-container .dia-disponivel:hover,
-[class*="calendario"] .dia-disponivel:hover {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-.calendario-container .dia-selecionado,
-[class*="calendario"] .dia-selecionado {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-.calendario-container .dia-hoje,
-[class*="calendario"] .dia-hoje {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-.calendario-container .dia-bloqueado,
-[class*="calendario"] .dia-bloqueado {
-  color: var(--gray-color) !important;
-  background-color: var(--light-color) !important;
-}
-
-.calendario-container .dia-passado,
-[class*="calendario"] .dia-passado {
-  color: var(--gray-light) !important;
-  background-color: var(--light-color) !important;
-}
-
-.calendario-container .btn-horario,
-[class*="calendario"] .btn-horario {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-}
-
-.calendario-container .btn-horario:hover,
-[class*="calendario"] .btn-horario:hover {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-.calendario-container .btn-horario.selecionado,
-[class*="calendario"] .btn-horario.selecionado {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-/* FORÇA MÁXIMA - Calendário com seletores universais */
-* .calendario-container * {
-  color: var(--dark-color) !important;
-}
-
-* .calendario-container .dia-semana {
-  color: var(--dark-color) !important;
-}
-
-* .calendario-container .dia-disponivel {
-  color: var(--dark-color) !important;
-  background-color: var(--white-color) !important;
-}
-
-* .calendario-container .dia-disponivel:hover {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-* .calendario-container .dia-selecionado {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-* .calendario-container .dia-hoje {
-  color: var(--white-color) !important;
-  background-color: var(--primary-color) !important;
-}
-
-* .calendario-container .dia-bloqueado {
-  color: var(--gray-color) !important;
-  background-color: var(--light-color) !important;
-}
-
-* .calendario-container .dia-passado {
-  color: var(--gray-light) !important;
-  background-color: var(--light-color) !important;
-}
-
-/* Calendário - força em elementos gerados dinamicamente */
-div[class*="dia"],
-.dias-mes div,
-.calendario-grid div {
-  color: var(--dark-color) !important;
-}
-
-/* =============================================
    OVERRIDE FINAL PARA TABELAS - NÃO REMOVER
    ============================================= */
 
@@ -1362,6 +1188,7 @@ table {
 
 /* Título mês/ano */
 .mes-ano {
+  color: var(--white-color) !important;
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
@@ -1417,7 +1244,7 @@ table {
 .dia-disponivel {
   background-color: var(--white-color);
   color: var(--dark-color);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-alpha);
   font-weight: 500;
 }
 
@@ -1433,15 +1260,15 @@ table {
 }
 
 .dia-hoje {
-  background-color: var(--primary-color);
+  background-color: var(--primary-alpha);
   color: var(--white-color);
   border: 2px solid var(--primary-color);
   font-weight: 600;
 }
 
 .dia-selecionado {
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
 }
 
 .dia-passado {
