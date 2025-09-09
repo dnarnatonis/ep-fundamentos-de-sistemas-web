@@ -68,6 +68,7 @@
 }
 
 .slide-content {
+    background-color: var(--white-color);
     flex: 1;
     padding: 30px;
     display: flex;
