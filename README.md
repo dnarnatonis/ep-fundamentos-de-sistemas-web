@@ -26,7 +26,7 @@ Sistema web completo para minimercado desenvolvido com HTML5 semântico, CSS3 av
 - **Calendário de agendamento** - Seleção de datas e horários
 - **Acessibilidade completa** - Conforme diretrizes WCAG 2.1
 
-## Funcionalidades
+## Funcionalidades do Sistema
 
 ### Catálogo de Produtos
 
@@ -90,64 +90,6 @@ Cada serviço possui descrição completa e informações de valor.
     └── bootstrap/          # Bootstrap framework
 ```
 
-## Características Técnicas
-
-### HTML5 Semântico (Aula 5)
-
-- Uso correto de elementos estruturais (`header`, `nav`, `main`, `footer`)
-- Hierarquia apropriada de títulos (`h1`-`h6`)
-- Organização semântica do conteúdo (`section`, `article`, `figure`)
-
-### Tabelas e Formulários (Aula 6)
-
-- Tabelas estruturadas com `<table>`, `<thead>`, `<tbody>`, `<tfoot>`
-- Formulários com `<fieldset>`, `<legend>`, `<label>`
-- Elementos variados: radio, range, checkbox, select, textarea, progress
-- Métodos POST/GET e validação HTML5
-
-### CSS Avançado (Aula 7)
-
-- Pseudo-classes: `:hover`, `:active`, `:focus`
-- Pseudo-elementos: `:first-child`, `:last-child`, `:before`, `:after`
-- Posicionamentos: estático, relativo, absoluto, fixo
-- Variables CSS e sistema de cores consistente
-
-### JavaScript Fundamentals (Aula 8)
-
-- Sintaxe correta: const/var/let, case sensitive
-- Métodos de arrays: join, reverse, sort, concat, slice, splice, push/pop
-- Estruturas de controle: if-else, switch, for, while, do-while
-- Funções temporais: setInterval, clearInterval, setTimeout
-
-### JavaScript Interativo (Aula 9)
-
-- Manipulação DOM com getElementById
-- Carrossel interativo com controles manuais e automáticos
-- Canvas para elementos gráficos (preparado para Chart.js)
-- Event listeners e interatividade do usuário
-
-### Acessibilidade (Aula 10)
-
-- Suporte a tecnologias assistivas (linha Braille, leitores de tela)
-- Correção de erros comuns: atributos alt, links adequados
-- Ferramentas de validação: W3C, AccessMonitor
-- Navegação por teclado completa
-- ARIA labels e live regions
-
-### Bootstrap 5
-
-- Grid system responsivo
-- Componentes: navbar, cards, modal, carousel, forms
-- Classes utilitárias para spacing, typography, colors
-- Design mobile-first
-
-### Navegação e UX
-
-- Skip links para acessibilidade
-- Sistema de navegação consistente
-- Design responsivo para todos os dispositivos
-- Feedback visual para todas as interações
-
 ## Como Executar
 
 ### Execução Local
@@ -207,6 +149,10 @@ Para reportar problemas ou sugerir melhorias:
 3. Forneça steps para reproduzir o comportamento
 
 ## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE) - veja o arquivo LICENSE para mais detalhes.
+
+### Uso Acadêmico
 
 Projeto desenvolvido para fins acadêmicos como parte da disciplina Fundamentos de Sistemas Web da PUCRS.
 
