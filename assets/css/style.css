@@ -1349,6 +1349,18 @@ table {
   height: 400px;
 }
 
+/* Carousel caption com fundo semi-transparente */
+.carousel-caption {
+  background-color: var(--primary-alpha);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  backdrop-filter: blur(6px);
+}
+
+.carousel-caption h5 {
+  color: var(--white-color) !important;
+}
+
 /* Responsividade do calendário - usando classes Bootstrap quando possível */
 @media (max-width: 768px) {
   .calendario-container {
