@@ -183,7 +183,7 @@ summary {
    =========================================== */
 
 /* Elementos com ARIA labels específicos (exceto botões do carrossel) */
-[aria-label]:empty:not(.indicator)::before {
+[aria-label]:empty:not(.indicator):not(.carousel-indicators button)::before {
   content: attr(aria-label);
   font-style: italic;
   color: #666;
