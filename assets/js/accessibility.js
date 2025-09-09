@@ -164,10 +164,15 @@ class GerenciadorAcessibilidade {
         
         let indiceAtual = indices.indexOf(this.configuracoes.tamanhoFonte);
         
+        // Se não encontrou o valor ou é primeira vez, usar padrão (índice 2 = 16px)
+        if (indiceAtual === -1) {
+            indiceAtual = 2;
+        }
+        
         if (incremento === 0) {
             indiceAtual = 2; // Tamanho normal (16px)
         } else {
-            indiceAtual = Math.max(0, Math.min(4, indiceAtual + 2 + incremento));
+            indiceAtual = Math.max(0, Math.min(4, indiceAtual + incremento));
         }
         
         this.configuracoes.tamanhoFonte = indices[indiceAtual];
@@ -497,211 +502,11 @@ class GerenciadorAcessibilidade {
     }
 }
 
-// CSS para acessibilidade
-function adicionarEstilosAcessibilidade() {
-    if (document.getElementById('accessibility-styles')) return;
-    
-    const styles = document.createElement('style');
-    styles.id = 'accessibility-styles';
-    styles.textContent = `
-        .accessibility-panel {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 10000;
-            font-family: Arial, sans-serif;
-        }
-        
-        .panel-toggle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #2c5530;
-            background: white;
-            color: #2c5530;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
-        
-        .panel-toggle:hover,
-        .panel-toggle:focus {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .panel-content {
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 280px;
-            background: white;
-            border: 2px solid #2c5530;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .panel-content h3 {
-            margin: 0 0 15px 0;
-            color: #2c5530;
-            text-align: center;
-        }
-        
-        .control-group {
-            margin-bottom: 15px;
-        }
-        
-        .control-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 5px;
-        }
-        
-        .button-group button {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #2c5530;
-            background: white;
-            color: #2c5530;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        .button-group button:hover,
-        .button-group button:focus {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .btn-acao, .btn-reset {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-acao {
-            background: #2c5530;
-            color: white;
-        }
-        
-        .btn-acao:hover {
-            background: #4a7c59;
-        }
-        
-        .btn-reset {
-            background: #6c757d;
-            color: white;
-        }
-        
-        .btn-reset:hover {
-            background: #5a6268;
-        }
-        
-        .skip-links {
-            position: absolute;
-            top: -200px;
-            left: 0;
-            width: 100%;
-            z-index: 10001;
-        }
-        
-        .skip-link {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #2c5530;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: top 0.3s ease;
-        }
-        
-        .skip-link:focus {
-            top: 10px;
-        }
-        
-        /* Indicação de foco para navegação por teclado */
-        .navegacao-teclado *:focus {
-            outline: 3px solid #2c5530 !important;
-            outline-offset: 2px !important;
-        }
-        
-        /* Alto contraste */
-        .high-contrast-mode {
-            background: #000000 !important;
-            color: #ffffff !important;
-        }
-        
-        .high-contrast-mode * {
-            background-color: inherit !important;
-            color: inherit !important;
-        }
-        
-        .high-contrast-mode a {
-            color: #ffff00 !important;
-            text-decoration: underline !important;
-        }
-        
-        .high-contrast-mode button {
-            background: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #ffffff !important;
-        }
-        
-        .high-contrast-mode .product-card {
-            border: 2px solid #ffffff !important;
-        }
-        
-        /* Screen reader only */
-        .sr-only {
-            position: absolute !important;
-            width: 1px !important;
-            height: 1px !important;
-            padding: 0 !important;
-            margin: -1px !important;
-            overflow: hidden !important;
-            clip: rect(0, 0, 0, 0) !important;
-            white-space: nowrap !important;
-            border: 0 !important;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .accessibility-panel {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .panel-content {
-                width: 250px;
-                right: -10px;
-            }
-        }
-    `;
-    
-    document.head.appendChild(styles);
-}
 
 // Inicializar acessibilidade
 let acessibilidade;
 
 document.addEventListener('DOMContentLoaded', function() {
-    adicionarEstilosAcessibilidade();
     acessibilidade = new GerenciadorAcessibilidade();
     
     console.log('✅ Sistema de acessibilidade inicializado conforme Aula 10');

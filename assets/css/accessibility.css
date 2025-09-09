@@ -29,23 +29,7 @@
   border: 0 !important;
 }
 
-/* Links de navegação rápida */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--primary-color, #2c5530);
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 9999;
-  transition: top 0.3s;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
+/* Links de navegação rápida - removido para usar versão atualizada abaixo */
 
 /* Correção de problemas comuns */
 
@@ -63,10 +47,7 @@ img:not([alt])::after {
   font-size: 12px;
 }
 
-/* Links que parecem botões devem ter role apropriado */
-a.btn, a.button {
-  role: button;
-}
+/* Links que parecem botões devem ter role apropriado via HTML, não CSS */
 
 /* Botões que são links devem ter href */
 button[href] {
@@ -195,33 +176,7 @@ summary {
   }
 }
 
-.high-contrast-mode {
-  --primary-color: #000000 !important;
-  --secondary-color: #333333 !important;
-  --accent-color: #666666 !important;
-  --white-color: #ffffff !important;
-  --dark-color: #000000 !important;
-  --light-color: #cccccc !important;
-}
-
-.high-contrast-mode body {
-  background: #ffffff !important;
-  color: #000000 !important;
-}
-
-.high-contrast-mode .product-card {
-  border: 2px solid #000000 !important;
-  background: #ffffff !important;
-}
-
-.high-contrast-mode a {
-  color: #0000ff !important;
-  text-decoration: underline !important;
-}
-
-.high-contrast-mode a:visited {
-  color: #800080 !important;
-}
+/* Alto contraste - removido para usar versão atualizada abaixo */
 
 /* ===========================================
    LEITORES DE TELA - ARIA SUPPORT
@@ -387,4 +342,188 @@ summary {
   font-size: 0.9rem;
   color: var(--gray-color, #495057); /* ✓ 4.5:1 contrast */
   margin-top: 4px;
+}
+
+/* ===========================================
+   PAINEL DE CONTROLES DE ACESSIBILIDADE
+   =========================================== */
+
+.accessibility-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+}
+
+.panel-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #2c5530;
+  background: white;
+  color: #2c5530;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.panel-toggle:hover,
+.panel-toggle:focus {
+  background: #2c5530;
+  color: white;
+}
+
+.panel-content {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 280px;
+  background: white;
+  border: 2px solid #2c5530;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.panel-content h3 {
+  margin: 0 0 15px 0;
+  color: #2c5530;
+  text-align: center;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #2c5530;
+  background: white;
+  color: #2c5530;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.button-group button:hover,
+.button-group button:focus {
+  background: #2c5530;
+  color: white;
+}
+
+.btn-acao, .btn-reset {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-acao {
+  background: #2c5530;
+  color: white;
+}
+
+.btn-acao:hover {
+  background: #4a7c59;
+}
+
+.btn-reset {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-reset:hover {
+  background: #5a6268;
+}
+
+/* Skip links atualizados */
+.skip-links {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  z-index: 10001;
+}
+
+/* Skip link com posicionamento correto */
+.skip-link {
+  position: absolute;
+  top: -200px;
+  left: 10px;
+  background: #2c5530;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: top 0.3s ease;
+  z-index: 10001;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Indicação de foco para navegação por teclado */
+.navegacao-teclado *:focus {
+  outline: 3px solid #2c5530 !important;
+  outline-offset: 2px !important;
+}
+
+/* Atualização do modo alto contraste */
+.high-contrast-mode {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast-mode * {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.high-contrast-mode a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-mode button {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+.high-contrast-mode .product-card {
+  border: 2px solid #ffffff !important;
+}
+
+/* Responsividade do painel */
+@media (max-width: 768px) {
+  .accessibility-panel {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .panel-content {
+    width: 250px;
+    right: -10px;
+    bottom: 60px;
+  }
 }
