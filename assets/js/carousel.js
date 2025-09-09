@@ -65,24 +65,24 @@ class CarrosselProdutos {
         
         // Montar estrutura do carrossel
         this.elemento.innerHTML = `
-            <div class="carousel-wrapper">
+            <div class="carousel-wrapper" aria-label="Carrossel interativo com ${produtosCarrossel.length} produtos em destaque">
                 <div class="carousel-slides" id="carousel-slides">
                     ${produtosCarrossel.map((produto, index) => this.criarSlide(produto, index)).join('')}
                 </div>
                 
                 <div class="carousel-navigation">
-                    <button class="carousel-btn carousel-prev" aria-label="Produto anterior">
+                    <button class="carousel-btn carousel-prev" aria-label="Produto anterior do carrossel de produtos em destaque">
                         <span aria-hidden="true">&#8249;</span>
                     </button>
-                    <button class="carousel-btn carousel-next" aria-label="Próximo produto">
+                    <button class="carousel-btn carousel-next" aria-label="Próximo produto do carrossel de produtos em destaque">
                         <span aria-hidden="true">&#8250;</span>
                     </button>
                 </div>
                 
                 <div class="carousel-indicators">
-                    ${produtosCarrossel.map((_, index) => 
+                    ${produtosCarrossel.map((produto, index) => 
                         `<button class="indicator ${index === 0 ? 'active' : ''}" 
-                                 aria-label="Ir para produto ${index + 1}"
+                                 aria-label="Ir para produto ${index + 1} de ${produtosCarrossel.length}: ${produto.nome}"
                                  data-slide="${index}"></button>`
                     ).join('')}
                 </div>
