@@ -40,7 +40,7 @@ class CarrosselProdutos {
                 categoria: 'Frutas e Verduras',
                 preco: 4.99,
                 descricao: 'Maçãs frescas e suculentas, direto do pomar',
-                imagem: 'https://placehold.co/400x300/e74c3c/ffffff?text=Maçã+Gala',
+                imagem: 'assets/img/frutas/maca-gala.jpg',
                 promocao: true
             },
             {
@@ -49,7 +49,7 @@ class CarrosselProdutos {
                 categoria: 'Alimentícios',
                 preco: 22.90,
                 descricao: 'Arroz integral de alta qualidade, rico em fibras',
-                imagem: 'https://placehold.co/400x300/f39c12/ffffff?text=Arroz+Integral',
+                imagem: 'assets/img/alimenticios/arroz-branco.jpg',
                 promocao: false
             },
             {
@@ -58,7 +58,7 @@ class CarrosselProdutos {
                 categoria: 'Higiene e Limpeza',
                 preco: 15.90,
                 descricao: 'Kit com sabonete, shampoo e condicionador',
-                imagem: 'https://placehold.co/400x300/3498db/ffffff?text=Kit+Higiene',
+                imagem: 'assets/img/higiene/sabonete-antibacteriano.jpg',
                 promocao: true
             }
         ];
